@@ -131,8 +131,8 @@
 
 
                                     <br> <br>
-                                    <a style="text-decoration: none" href="images/Simple Invoices.csv" download
-                                        class="purpleButton">Download
+                                    <a style="text-decoration: none" href="{{ asset('images/Simple Invoices.csv') }}"
+                                        download class="purpleButton">Download
                                         CSV</a>
 
                                 </p>
@@ -397,29 +397,68 @@
         function addItemInTheList() {
             var mainList = document.getElementById('totalListOfAllTheItems');
             indexOfList = mainList.children.length + 1;
-            mainList.innerHTML += ` <div id="addAndDeleteItemFromList_` + indexOfList + `" class="row my-4">
-                                                <div class="col-lg-4 ">
-                                                    <label for="">
-                                                        Quantity
-                                                    </label> <br>
-                                                    <input type="text" class="form-control quantity" name=""
-                                                        style="width:100%;" id="quantity` + indexOfList + `">
-                                                </div>
-                                                <div class="col-lg-4 ">
-                                                    <label for="">
-                                                        Description
-                                                    </label> <br>
-                                                    <input type="text" class="form-control description" name=""
-                                                        style="width:100%;" id="description` + indexOfList + `">
-                                                </div>
-                                                <div class="col-lg-4 ">
-                                                    <label for="">
-                                                        Total Price
-                                                    </label> <br>
-                                                    <input type="text" class="form-control totalPrice" name=""
-                                                        style="width:100%;" id="totalPrice` + indexOfList + `">
-                                                </div>
-                                            </div>`;
+            // Main Div
+            let mainDiv = document.createElement('div');
+            mainDiv.id = "addAndDeleteItemFromList_" + indexOfList;
+            mainDiv.classList = "row my-4";
+
+            // Sub Div 1
+            let subDiv_1 = document.createElement('div');
+            subDiv_1.classList = "col-lg-4";
+
+            // Label 1
+            let sublabel_1 = document.createElement('label');
+            sublabel_1.setAttribute("for", "quantity" + indexOfList);
+            sublabel_1.innerHTML = "Quantity";
+            subDiv_1.appendChild(sublabel_1);
+            // Input 2
+            let subinput_1 = document.createElement('input');
+            subinput_1.type = "text";
+            subinput_1.classList = "form-control quantity";
+            subinput_1.id = "quantity" + indexOfList;
+            subinput_1.style.width = "100%";
+            subDiv_1.appendChild(subinput_1);
+            mainDiv.appendChild(subDiv_1);
+
+            // Sub Div 2
+            let subDiv_2 = document.createElement('div');
+            subDiv_2.classList = "col-lg-4";
+
+            // Label 2
+            let sublabel_2 = document.createElement('label');
+            sublabel_2.setAttribute("for", "description" + indexOfList);
+            sublabel_2.innerHTML = "Description";
+            subDiv_2.appendChild(sublabel_2);
+            // Input 2
+            let subinput_2 = document.createElement('input');
+            subinput_2.type = "text";
+            subinput_2.classList = "form-control description";
+            subinput_2.id = "description" + indexOfList;
+            subinput_2.style.width = "100%";
+            subDiv_2.appendChild(subinput_2);
+            mainDiv.appendChild(subDiv_2);
+
+            // Sub Div 3
+            let subDiv_3 = document.createElement('div');
+            subDiv_3.classList = "col-lg-4";
+
+            // Label 3
+            let sublabel_3 = document.createElement('label');
+            sublabel_3.setAttribute("for", "totalPrice" + indexOfList);
+            sublabel_3.innerHTML = "Description";
+            subDiv_3.appendChild(sublabel_3);
+            // Input 3
+            let subinput_3 = document.createElement('input');
+            subinput_3.type = "text";
+            subinput_3.classList = "form-control totalPrice";
+            subinput_3.id = "totalPrice" + indexOfList;
+            subinput_3.style.width = "100%";
+            subDiv_3.appendChild(subinput_3);
+            mainDiv.appendChild(subDiv_3);
+
+
+            mainList.appendChild(mainDiv);
+
         }
 
         function resetListItems() {

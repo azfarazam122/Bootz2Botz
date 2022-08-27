@@ -35,5 +35,6 @@ Route::group(['middleware' => ['checkLogin']], function () {
     Route::post('/quarterCloseResult', [ChallengeResult::class, 'quarterClose_Result_Fun'])->name('quarterCloseResult');
     Route::post('/customerOnboardingResult', [ChallengeResult::class, 'customerOnboarding_Result_Fun'])->name('customerOnboardingResult');
     Route::post('/invoiceProcessingResult', [ChallengeResult::class, 'invoiceProcessing'])->name('invoiceProcessingResult');
+    Route::post('/lunchOrderingResult', [ChallengeResult::class, 'lunchOrdering'])->name('lunchOrderingResult');
 
 });

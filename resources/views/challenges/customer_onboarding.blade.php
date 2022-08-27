@@ -135,8 +135,8 @@
 
 
                                     <br> <br>
-                                    <a style="text-decoration: none" href="images/Missing Customers.csv" download
-                                        class="purpleButton">Download
+                                    <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
+                                        download class="purpleButton">Download
                                         CSV </a>
 
                                 </p>

@@ -90,4 +90,26 @@ class ChallengeResult extends Controller
         echo $result;
 
     }
+    public function lunchOrdering(Request $req)
+    {
+        // echo count($req->items_array);
+        $totalFoodMatch = 0;
+        for ($i = 0; $i < count($req->items_array); $i++) {
+            $data = DB::table('lunch_ordering')->where('favorite_food', '=', $req->items_array[$i])->get();
+            if (count($data) > 0) {
+                # code...
+                $totalFoodMatch++;
+            }
+        }
+        echo $totalFoodMatch;
+        // $result = 0;
+        // $data = DB::table('customer_onboarding')->where('id', '=', $req->no_of_time_submit_btn_click)->get();
+        // $customerOnboarding_Data = json_decode($data);
+        // if ($customerOnboarding_Data[0]->customer_name == $req->customer_name) {
+        //     $result++;
+        // }
+
+        // echo $result;
+
+    }
 }
