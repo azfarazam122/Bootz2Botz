@@ -25,7 +25,7 @@
                         </thead>
                         <tbody id="challenge1List_Body">
                             @php
-                                $challenge1_List = DB::table('challenge_1')->get();
+                                $challenge1_List = DB::table('quarter_close')->get();
                             @endphp
 
                             @for ($i = 0; $i < count($challenge1_List); $i++)

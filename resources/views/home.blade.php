@@ -69,7 +69,7 @@
                                 <div class="body-chal">
                                     <div class="row">
                                         <div class="col-lg-3 p-3 pt-4 ps-5">
-                                            <img src="images/QuarterClose.png" width="100%" alt="" srcset="">
+                                            <img src="images/quarter.png" width="100%" alt="" srcset="">
                                         </div>
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
@@ -110,7 +110,7 @@
                                 <div class="body-chal">
                                     <div class="row">
                                         <div class="col-lg-3 p-3 pt-4 ps-5">
-                                            <img src="images/gro.png" width="100%" alt="" srcset="">
+                                            <img src="images/grocery.png" width="100%" alt="" srcset="">
                                         </div>
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
@@ -151,7 +151,7 @@
                                 <div class="body-chal">
                                     <div class="row">
                                         <div class="col-lg-3 p-3 pt-4 ps-5">
-                                            <img src="images/QuarterClose.png" width="100%" alt="" srcset="">
+                                            <img src="images/invoice.png" width="100%" alt="" srcset="">
                                         </div>
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
@@ -197,7 +197,7 @@
                                 <div class="body-chal">
                                     <div class="row">
                                         <div class="col-lg-3 p-3 pt-4 ps-5">
-                                            <img src="images/gro.png" width="100%" alt="" srcset="">
+                                            <img src="images/customer.png" width="100%" alt="" srcset="">
                                         </div>
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
@@ -297,7 +297,7 @@
                                         <!--headin5_amrc-->
                                         <ul class="footer_ul_amrc">
                                             <li><a href="#">Login</a></li>
-                                            <li><a href="#">SingUp</a></li>
+                                            <li><a href="#">SignUp</a></li>
                                             <li><a href="#">Challenges</a></li>
 
                                         </ul>

@@ -373,7 +373,7 @@
                                         <!--headin5_amrc-->
                                         <ul class="footer_ul_amrc">
                                             <li><a href="#">Login</a></li>
-                                            <li><a href="#">SingUp</a></li>
+                                            <li><a href="#">Signup</a></li>
                                             <li><a href="#">Challenges</a></li>
 
                                         </ul>

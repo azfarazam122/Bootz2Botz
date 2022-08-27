@@ -70,11 +70,11 @@
                                     match is found, mark the trasaction as 'Unverified' so that the finance team can dig
                                     into this transaction further.
                                     <br> <br>
-                                <p class="my-0"> <b> Boots2Bitz Bank Username:</b> Jeremy@gmail.com </p>
-                                <p> <b> Boots2Bitz Bank Password:</b> Jeremy1234! </p>
+                                <p class="my-0"> <b> Kado BankUsername:</b> Jeremy@gmail.com </p>
+                                <p> <b> Kado Bank Password:</b> Jeremy1234! </p>
                                 <a style="text-decoration: none" target="blank" href="Bank"
-                                    class="purpleButton">Boots2Bitz
-                                    Bank
+                                    class="purpleButton">Kado Bank
+                                    
                                     Login</a>
 
                                 </p>
@@ -231,7 +231,7 @@
                                         <!--headin5_amrc-->
                                         <ul class="footer_ul_amrc">
                                             <li><a href="#">Login</a></li>
-                                            <li><a href="#">SingUp</a></li>
+                                            <li><a href="#">Signup</a></li>
                                             <li><a href="#">Challenges</a></li>
 
                                         </ul>
