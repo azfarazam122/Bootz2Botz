@@ -106,9 +106,16 @@
 
 
 
-                        <!-- all challnmges  -->
+                        <!-- STOP WATCH CALCULATE TOTAL TIME OF CHALLENGE  -->
+                        <p class="stopwatch display-3 text-center" id="stopwatch">
+                            <!-- stopwatch goes here -->
+                        </p>
+                        <button class="btn-start d-none" id="startBtn">Start</button>
+                        <button class="btn-stop d-none" id="stopBtn">Stop</button>
+                        <button class="btn-reset d-none" id="resetBtn">Reset</button>
 
-                        <div class="container mt-5" style="margin-top: 100px !important;">
+
+                        <div class="container mt-5">
 
                             <div class="headertext">
 
@@ -419,13 +426,13 @@
     <script>
         var noOfTimesSubmitButtonClick = 0;
         var noOfCorrectAnswers = [];
-        var startTime;
+        start();
 
         function customerOnBoardingSubmit() {
             if (noOfTimesSubmitButtonClick == 0) {
                 startTime = new Date();
             }
-            if (noOfTimesSubmitButtonClick < 8) {
+            if (noOfTimesSubmitButtonClick < 10) {
                 let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
                 let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
                 resultBoxMainDiv.style.display = "";
@@ -445,7 +452,10 @@
                         noOfCorrectAnswers.push(numeral(response.data).value());
                         let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
                         noOfTimesSubmitButtonClick++;
-                        resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 10);
+                        resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 8);
+                        if (noOfTimesSubmitButtonClick == 10) {
+                            document.getElementById('SubmitButton').innerHTML = "Check Result"
+                        }
                         //     // Swal.fire({
                         //     //     icon: 'error',
                         //     //     title: 'Oops...',
@@ -459,10 +469,10 @@
                     });
                 // ________________________________
 
-            } else if (noOfTimesSubmitButtonClick == 8) {
-                let endTime = new Date()
-                let totalTime = (endTime - startTime) / 1000;
-                totalTime = totalTime.toFixed(2);
+            } else if (noOfTimesSubmitButtonClick == 10) {
+                stop();
+                let totalTime = document.getElementById('stopwatch').innerHTML;
+
 
                 let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
                 let resultInPercentage = totalCorrectAnswers / 64;
@@ -471,14 +481,14 @@
                 if (resultInPercentage <= 50) {
                     Swal.fire(
                         'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime + 's',
+                        totalTime,
                         "Try Again. It looks like some fields were filled incorrectly.",
                         'success'
                     )
                 } else if (resultInPercentage > 50 && resultInPercentage < 76) {
                     Swal.fire(
                         'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime + 's',
+                        totalTime,
                         "Well Done. It looks like more than half of the fields were filled correctly.",
                         'success'
                     )
@@ -486,7 +496,7 @@
                 } else if (resultInPercentage > 75) {
                     Swal.fire(
                         'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime + 's',
+                        totalTime,
                         "Excellent. It looks like All fields were filled correctly.",
                         'success'
                     )
@@ -500,6 +510,61 @@
 
         function restartTest() {
             window.location.href = window.location.href;
+        }
+
+        // Calculate Total Time Challenge Take
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        startBtn.addEventListener('click', start, false);
+        stopBtn.addEventListener('click', stop, false);
+        resetBtn.addEventListener('click', reset, false);
+
+        let output = document.getElementById('stopwatch');
+        let ms = 0;
+        let sec = 0;
+        let min = 0;
+
+        function timer() {
+            ms++;
+            if (ms >= 100) {
+                sec++
+                ms = 0
+            }
+            if (sec === 60) {
+                min++
+                sec = 0
+            }
+            if (min === 60) {
+                ms,
+                sec,
+                min = 0;
+            }
+
+            //Doing some string interpolation
+            let milli = ms < 10 ? `0` + ms : ms;
+            let seconds = sec < 10 ? `0` + sec : sec;
+            let minute = min < 10 ? `0` + min : min;
+
+            let timer = `${minute}:${seconds}:${milli}`;
+            output.innerHTML = timer;
+        };
+        //Start timer
+        function start() {
+            time = setInterval(timer, 10);
+        }
+        //stop timer
+        function stop() {
+            clearInterval(time)
+        }
+        //reset timer
+        function reset() {
+            ms = 0;
+            sec = 0;
+            min = 0;
+
+            output.innerHTML = `00:00:00`
         }
     </script>
 @endsection

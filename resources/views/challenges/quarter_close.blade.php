@@ -23,39 +23,15 @@
 
                         </div>
 
+                        <!-- STOP WATCH CALCULATE TOTAL TIME OF CHALLENGE  -->
+                        <p class="stopwatch display-3 text-center" id="stopwatch">
+                            <!-- stopwatch goes here -->
+                        </p>
+                        <button class="btn-start d-none" id="startBtn">Start</button>
+                        <button class="btn-stop d-none" id="stopBtn">Stop</button>
+                        <button class="btn-reset d-none" id="resetBtn">Reset</button>
 
-                        <div class="mainDiv">
-                            <div class="wrapper text-center">
-                                <p class="fs-1"><span id="seconds">00</span>:<span id="tens">00</span></p>
-                                <div style="display: none;">
-                                    <button class="btn btn-dark" id="button-start">Start</button>
-                                    <button class="btn btn-dark" id="button-stop">Stop</button>
-                                    <button class="btn btn-dark" id="button-reset">Reset</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-
-                        <div class="container mt-5" style="margin-top: 100px !important;">
+                        <div class="container mt-5">
 
                             <div class="headertext">
                                 <p>
@@ -72,9 +48,9 @@
                                     <br> <br>
                                 <p class="my-0"> <b> Kado BankUsername:</b> Jeremy@gmail.com </p>
                                 <p> <b> Kado Bank Password:</b> Jeremy1234! </p>
-                                <a style="text-decoration: none" target="blank" href="Bank"
-                                    class="purpleButton">Kado Bank
-                                    
+                                <a style="text-decoration: none" target="blank" href="Bank" class="purpleButton">Kado
+                                    Bank
+
                                     Login</a>
 
                                 </p>
@@ -277,6 +253,8 @@
         </div>
     </div>
     <script>
+        start();
+
         function challenge_1_CalculateResult() {
             var PONumber_array = [];
             var TransactionStatus_array = [];
@@ -291,10 +269,9 @@
                     array_2: TransactionStatus_array,
                 })
                 .then(function(response) {
-                    clearInterval(Interval);
-                    let totalSeconds = document.getElementById('seconds').innerHTML
-                    let totalTens = document.getElementById('tens').innerHTML
-                    let totalTime = totalSeconds + " : " + totalTens;
+                    stop()
+
+                    let totalTime = document.getElementById('stopwatch').innerHTML;
                     let resultInPercentage = response.data / 12;
                     resultInPercentage = resultInPercentage * 100;
                     resultInPercentage = resultInPercentage.toFixed(0);
@@ -332,64 +309,61 @@
                     console.log(error.response);
                 });
         }
-    </script>
-    <script>
-        var seconds = 00;
-        var tens = 00;
-        var appendTens = document.getElementById("tens")
-        var appendSeconds = document.getElementById("seconds")
-        var buttonStart = document.getElementById('button-start');
-        var buttonStop = document.getElementById('button-stop');
-        var buttonReset = document.getElementById('button-reset');
-        var Interval;
-        window.onload = function() {
 
 
-            // buttonStart.onclick = function() {
+        // Calculate Total Time Challenge Take
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetBtn = document.getElementById('resetBtn');
 
-            clearInterval(Interval);
-            Interval = setInterval(startTimer, 10);
-            // }
+        startBtn.addEventListener('click', start, false);
+        stopBtn.addEventListener('click', stop, false);
+        resetBtn.addEventListener('click', reset, false);
 
-            buttonStop.onclick = function() {
-                clearInterval(Interval);
+        let output = document.getElementById('stopwatch');
+        let ms = 0;
+        let sec = 0;
+        let min = 0;
+
+        function timer() {
+            ms++;
+            if (ms >= 100) {
+                sec++
+                ms = 0
+            }
+            if (sec === 60) {
+                min++
+                sec = 0
+            }
+            if (min === 60) {
+                ms,
+                sec,
+                min = 0;
             }
 
+            //Doing some string interpolation
+            let milli = ms < 10 ? `0` + ms : ms;
+            let seconds = sec < 10 ? `0` + sec : sec;
+            let minute = min < 10 ? `0` + min : min;
 
-            buttonReset.onclick = function() {
-                clearInterval(Interval);
-                tens = "00";
-                seconds = "00";
-                appendTens.innerHTML = tens;
-                appendSeconds.innerHTML = seconds;
-            }
-
+            let timer = `${minute}:${seconds}:${milli}`;
+            output.innerHTML = timer;
+        };
+        //Start timer
+        function start() {
+            time = setInterval(timer, 10);
         }
+        //stop timer
+        function stop() {
+            clearInterval(time)
+        }
+        //reset timer
+        function reset() {
+            ms = 0;
+            sec = 0;
+            min = 0;
 
-        function startTimer() {
-            tens++;
-
-            if (tens <= 9) {
-                appendTens.innerHTML = "0" + tens;
-            }
-
-            if (tens > 9) {
-                appendTens.innerHTML = tens;
-
-            }
-
-            if (tens > 99) {
-                console.log("seconds");
-                seconds++;
-                appendSeconds.innerHTML = "0" + seconds;
-                tens = 0;
-                appendTens.innerHTML = "0" + 0;
-            }
-
-            if (seconds > 9) {
-                appendSeconds.innerHTML = seconds;
-            }
-
+            output.innerHTML = `00:00:00`
         }
     </script>
 @endsection
