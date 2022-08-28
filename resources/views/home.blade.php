@@ -83,8 +83,7 @@
                                                     validate that the transaction appears/cleared in the company’s bank.
                                                     <br>
                                                     <hr>
-                                                    Arcadia Bank Username: tammy.peters@petersmfg.com <br>Arcadia Bank
-                                                    Password: arcadiabank!
+                                                   
                                                 </p>
                                                 <a style="text-decoration: none" href="Challenge_1"
                                                     class="purpleButton">View More</a>

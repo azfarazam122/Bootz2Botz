@@ -128,7 +128,7 @@
 
                                     <br> <br>
                                     <a style="text-decoration: none" href="{{ asset('images/Lunch Order List.xlsx') }}"
-                                        class="purpleButton">Download
+                                     download='Favourite Food.csv'   class="purpleButton">Download
                                         Favourite
                                         Food Spreadsheet</a>
 

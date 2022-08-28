@@ -136,7 +136,7 @@
 
                                     <br> <br>
                                     <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
-                                        download class="purpleButton">Download
+                                    download='Missing Customers.csv' class="purpleButton">Download
                                         CSV </a>
 
                                 </p>
