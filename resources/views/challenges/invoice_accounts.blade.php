@@ -488,8 +488,10 @@
                     resultBoxMainDiv.style.display = "";
 
                     let totalPrice_1 = document.getElementById('totalPrice_1').value
-                    totalPrice_1 = numeral(totalPrice_1).value().toString();
-                    totalPrice_1 = "$" + totalPrice_1;
+                    if (totalPrice_1 != "") {
+                        totalPrice_1 = numeral(totalPrice_1).value().toString();
+                        totalPrice_1 = "$" + totalPrice_1;
+                    }
                     // // ________________________________
                     this.axios.post("{{ route('invoiceProcessingResult') }}", {
                             create_CSV: "false",
@@ -561,7 +563,7 @@
                 }
             } else {
                 Swal.fire(
-                    'Download CSV : ',
+                    'Download CSV First : ',
                     "You have to Download The CSV First From the Top Of The Page Than Match the Values With It Than Submit",
                     'error'
                 )

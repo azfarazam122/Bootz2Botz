@@ -428,88 +428,98 @@
         start();
 
         function customerOnBoardingSubmit() {
-            if (noOfTimesSubmitButtonClick == 0) {
-                startTime = new Date();
-            }
-            if (noOfTimesSubmitButtonClick < 10) {
-                let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
-                let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
-                resultBoxMainDiv.style.display = "";
-                // // ________________________________
-                this.axios.post("{{ route('customerOnboardingResult') }}", {
-                        no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
-                        customer_name: document.getElementById('customer_name').value,
-                        customer_id: document.getElementById('customer_id').value,
-                        primary_contact: document.getElementById('primary_contact').value,
-                        street_address: document.getElementById('street_address').value,
-                        city: document.getElementById('city').value,
-                        state: document.getElementById('state').value,
-                        zipcode: document.getElementById('zipcode').value,
-                        email: document.getElementById('email').value,
-                    })
-                    .then(function(response) {
-                        noOfCorrectAnswers.push(numeral(response.data).value());
-                        let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                        noOfTimesSubmitButtonClick++;
-                        resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 8);
-                        if (noOfTimesSubmitButtonClick == 10) {
-                            document.getElementById('SubmitButton').innerHTML = "Check Result"
-                        }
-                        //     // Swal.fire({
-                        //     //     icon: 'error',
-                        //     //     title: 'Oops...',
-                        //     //     text: 'Something went wrong!',
-                        //     //     footer: '<a href="">Why do I have this issue?</a>'
-                        //     // })
-
-                    })
-                    .catch(function(error) {
-                        console.log(error.response);
-                    });
-                // ________________________________
-
-            } else if (noOfTimesSubmitButtonClick == 10) {
-                stop();
-                let totalTime = document.getElementById('stopwatch').innerHTML;
-
-
-                let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                let resultInPercentage = totalCorrectAnswers / 64;
-                resultInPercentage = resultInPercentage * 100;
-                resultInPercentage = resultInPercentage.toFixed(0);
-                if (resultInPercentage <= 50) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Try Again. It looks like some fields were filled incorrectly.",
-                        'success'
-                    )
-                } else if (resultInPercentage > 50 && resultInPercentage < 76) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Well Done. It looks like more than half of the fields were filled correctly.",
-                        'success'
-                    )
-
-                } else if (resultInPercentage > 75) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Excellent. It looks like All fields were filled correctly.",
-                        'success'
-                    )
-
+            if (checkIfDownloadCSVButtonIsClicked == true) {
+                if (noOfTimesSubmitButtonClick == 0) {
+                    startTime = new Date();
                 }
+                if (noOfTimesSubmitButtonClick < 10) {
+                    let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
+                    let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
+                    resultBoxMainDiv.style.display = "";
+                    // // ________________________________
+                    this.axios.post("{{ route('customerOnboardingResult') }}", {
+                            no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
+                            customer_name: document.getElementById('customer_name').value,
+                            customer_id: document.getElementById('customer_id').value,
+                            primary_contact: document.getElementById('primary_contact').value,
+                            street_address: document.getElementById('street_address').value,
+                            city: document.getElementById('city').value,
+                            state: document.getElementById('state').value,
+                            zipcode: document.getElementById('zipcode').value,
+                            email: document.getElementById('email').value,
+                        })
+                        .then(function(response) {
+                            noOfCorrectAnswers.push(numeral(response.data).value());
+                            let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                            noOfTimesSubmitButtonClick++;
+                            resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 8);
+                            if (noOfTimesSubmitButtonClick == 10) {
+                                document.getElementById('SubmitButton').innerHTML = "Check Result"
+                            }
+                            //     // Swal.fire({
+                            //     //     icon: 'error',
+                            //     //     title: 'Oops...',
+                            //     //     text: 'Something went wrong!',
+                            //     //     footer: '<a href="">Why do I have this issue?</a>'
+                            //     // })
 
-                document.getElementById('SubmitButton').style.display = "none"
-                document.getElementById('RestartTestButton').style.display = ""
+                        })
+                        .catch(function(error) {
+                            console.log(error.response);
+                        });
+                    // ________________________________
+
+                } else if (noOfTimesSubmitButtonClick == 10) {
+                    stop();
+                    let totalTime = document.getElementById('stopwatch').innerHTML;
+
+
+                    let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                    let resultInPercentage = totalCorrectAnswers / 64;
+                    resultInPercentage = resultInPercentage * 100;
+                    resultInPercentage = resultInPercentage.toFixed(0);
+                    if (resultInPercentage <= 50) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Try Again. It looks like some fields were filled incorrectly.",
+                            'success'
+                        )
+                    } else if (resultInPercentage > 50 && resultInPercentage < 76) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Well Done. It looks like more than half of the fields were filled correctly.",
+                            'success'
+                        )
+
+                    } else if (resultInPercentage > 75) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Excellent. It looks like All fields were filled correctly.",
+                            'success'
+                        )
+
+                    }
+
+                    document.getElementById('SubmitButton').style.display = "none"
+                    document.getElementById('RestartTestButton').style.display = ""
+                }
+            } else {
+                Swal.fire(
+                    'Download CSV First: ',
+                    "You have to Download The CSV First From the Top Of The Page Than Match the Values With It Than Submit",
+                    'error'
+                )
             }
+
         }
 
         function restartTest() {
             window.location.href = window.location.href;
         }
+        var checkIfDownloadCSVButtonIsClicked = false;
 
         function downloadCsvWithRandomData() {
             this.axios.post("{{ route('generateCSVWithRandomDataForCustomerOnboarding') }}", {})

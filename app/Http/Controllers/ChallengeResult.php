@@ -69,7 +69,7 @@ class ChallengeResult extends Controller
 
         $customerOnboardingData = DB::table('customer_onboarding')
             ->get()
-            ->random(8);
+            ->random(10);
         // echo json_encode($customerOnboardingData[0]->id);
         $list = array(
             array("Customer Name", "Customer ID", "Primary Contact", "Street Address", "City", "State", "Zipcode", "Email"),
@@ -81,6 +81,8 @@ class ChallengeResult extends Controller
             array($customerOnboardingData[5]->customer_name, $customerOnboardingData[5]->customer_id, $customerOnboardingData[5]->primary_contact, $customerOnboardingData[5]->street_address, $customerOnboardingData[5]->city, $customerOnboardingData[5]->state, $customerOnboardingData[5]->zipcode, $customerOnboardingData[5]->email),
             array($customerOnboardingData[6]->customer_name, $customerOnboardingData[6]->customer_id, $customerOnboardingData[6]->primary_contact, $customerOnboardingData[6]->street_address, $customerOnboardingData[6]->city, $customerOnboardingData[6]->state, $customerOnboardingData[6]->zipcode, $customerOnboardingData[6]->email),
             array($customerOnboardingData[7]->customer_name, $customerOnboardingData[7]->customer_id, $customerOnboardingData[7]->primary_contact, $customerOnboardingData[7]->street_address, $customerOnboardingData[7]->city, $customerOnboardingData[7]->state, $customerOnboardingData[7]->zipcode, $customerOnboardingData[7]->email),
+            array($customerOnboardingData[8]->customer_name, $customerOnboardingData[8]->customer_id, $customerOnboardingData[8]->primary_contact, $customerOnboardingData[8]->street_address, $customerOnboardingData[8]->city, $customerOnboardingData[8]->state, $customerOnboardingData[8]->zipcode, $customerOnboardingData[8]->email),
+            array($customerOnboardingData[9]->customer_name, $customerOnboardingData[9]->customer_id, $customerOnboardingData[9]->primary_contact, $customerOnboardingData[9]->street_address, $customerOnboardingData[9]->city, $customerOnboardingData[9]->state, $customerOnboardingData[9]->zipcode, $customerOnboardingData[9]->email),
         );
 
         $file = fopen("assets/RandomCSV/missing-customer.csv", "w");
@@ -152,10 +154,6 @@ class ChallengeResult extends Controller
         }
         if ($customerOnboarding_Data[1] == $req->customer_id) {
             $result++;
-        } else {
-            echo $customerOnboarding_Data[1];
-            echo $req->customer_id;
-            echo "customer_id Not Matched";
         }
         if ($customerOnboarding_Data[2] == $req->primary_contact) {
             $result++;
