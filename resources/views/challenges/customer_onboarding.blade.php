@@ -126,18 +126,17 @@
                                     all 7 customers' details have been entered, your score for the exercise will be
                                     displayed.
 
-
-
-
-
-
-
-
-
                                     <br> <br>
-                                    <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
-                                    download='Missing Customers.csv' class="purpleButton">Download
-                                        CSV </a>
+                                    {{-- <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
+                                        download='Missing Customers.csv' class="purpleButton">Download
+                                        CSV </a> --}}
+                                    <a style="text-decoration: none" id="linkForCSV_fileDownloadForCustomerOnboarding"
+                                        href="{{ asset('assets/RandomCSV/missing-customer.csv') }}"
+                                        download='missing-customer.csv' class="purpleButton d-none">Download
+                                        CSV</a>
+                                    <button style="text-decoration: none" onclick="downloadCsvWithRandomData()"
+                                        class="purpleButton">Download
+                                        CSV</button>
 
                                 </p>
                             </div>
@@ -510,6 +509,22 @@
 
         function restartTest() {
             window.location.href = window.location.href;
+        }
+
+        function downloadCsvWithRandomData() {
+            this.axios.post("{{ route('generateCSVWithRandomDataForCustomerOnboarding') }}", {})
+                .then(function(response) {
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Well Done...',
+                    //     text: 'CSV Generated!',
+                    // })
+                    checkIfDownloadCSVButtonIsClicked = true;
+                    document.getElementById('linkForCSV_fileDownloadForCustomerOnboarding').click();
+                })
+                .catch(function(error) {
+                    console.log(error.response);
+                });
         }
 
         // Calculate Total Time Challenge Take

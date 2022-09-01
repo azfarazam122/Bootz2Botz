@@ -131,9 +131,16 @@
 
 
                                     <br> <br>
-                                    <a style="text-decoration: none" href="{{ asset('images/Simple Invoices.csv') }}"
+                                    {{-- <a style="text-decoration: none" href="{{ asset('images/Simple Invoices.csv') }}"
                                     download='Invoices.csv' class="purpleButton">Download
+                                        CSV</a> --}}
+                                    <a style="text-decoration: none" id="linkForCSV_fileDownloadForInvoiceProcessing"
+                                        href="{{ asset('assets/RandomCSV/sample-invoices.csv') }}"
+                                        download='sample-invoices.csv' class="purpleButton d-none">Download
                                         CSV</a>
+                                    <button style="text-decoration: none" onclick="downloadCsvWithRandomData()"
+                                        class="purpleButton">Download
+                                        CSV</button>
 
                                 </p>
                             </div>
@@ -473,82 +480,114 @@
         start()
 
         function invoiceProcessingSubmit() {
-            if (noOfTimesSubmitButtonClick < 6) {
-                let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
-                let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
-                resultBoxMainDiv.style.display = "";
-                // // ________________________________
-                this.axios.post("{{ route('invoiceProcessingResult') }}", {
-                        no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
-                        invoice_number: document.getElementById('invoice_number').value,
-                        invoice_date: document.getElementById('invoice_date').value,
-                        invoice_total: document.getElementById('invoice_total').value,
-                        quantity_1: document.getElementById('quantity_1').value,
-                        description_1: document.getElementById('description_1').value,
-                        totalPrice_1: document.getElementById('totalPrice_1').value,
-                    })
-                    .then(function(response) {
-                        noOfCorrectAnswers.push(numeral(response.data).value());
-                        let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                        noOfTimesSubmitButtonClick++;
-                        resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 6);
-                        if (noOfTimesSubmitButtonClick == 6) {
-                            document.getElementById('SubmitButton').innerHTML = "Check Result"
-                        }
-                        //     // Swal.fire({
-                        //     //     icon: 'error',
-                        //     //     title: 'Oops...',
-                        //     //     text: 'Something went wrong!',
-                        //     //     footer: '<a href="">Why do I have this issue?</a>'
-                        //     // })
+            if (checkIfDownloadCSVButtonIsClicked == true) {
 
-                    })
-                    .catch(function(error) {
-                        console.log(error.response);
-                    });
-                // ________________________________
+                if (noOfTimesSubmitButtonClick < 6) {
+                    let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
+                    let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
+                    resultBoxMainDiv.style.display = "";
 
-            } else if (noOfTimesSubmitButtonClick == 6) {
-                stop();
-                let totalTime = document.getElementById('stopwatch').innerHTML;
+                    let totalPrice_1 = document.getElementById('totalPrice_1').value
+                    totalPrice_1 = numeral(totalPrice_1).value().toString();
+                    totalPrice_1 = "$" + totalPrice_1;
+                    // // ________________________________
+                    this.axios.post("{{ route('invoiceProcessingResult') }}", {
+                            create_CSV: "false",
+                            no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
+                            invoice_number: document.getElementById('invoice_number').value,
+                            invoice_date: document.getElementById('invoice_date').value,
+                            invoice_total: document.getElementById('invoice_total').value,
+                            quantity_1: document.getElementById('quantity_1').value,
+                            description_1: document.getElementById('description_1').value,
+                            totalPrice_1: totalPrice_1,
+                        })
+                        .then(function(response) {
+                            noOfCorrectAnswers.push(numeral(response.data).value());
+                            let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                            noOfTimesSubmitButtonClick++;
+                            resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 6);
+                            if (noOfTimesSubmitButtonClick == 6) {
+                                document.getElementById('SubmitButton').innerHTML = "Check Result"
+                            }
+                            //     // Swal.fire({
+                            //     //     icon: 'error',
+                            //     //     title: 'Oops...',
+                            //     //     text: 'Something went wrong!',
+                            //     //     footer: '<a href="">Why do I have this issue?</a>'
+                            //     // })
+
+                        })
+                        .catch(function(error) {
+                            console.log(error.response);
+                        });
+                    // ________________________________
+
+                } else if (noOfTimesSubmitButtonClick == 6) {
+                    stop();
+                    let totalTime = document.getElementById('stopwatch').innerHTML;
 
 
-                let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                let resultInPercentage = totalCorrectAnswers / 36;
-                resultInPercentage = resultInPercentage * 100;
-                resultInPercentage = resultInPercentage.toFixed(0);
-                if (resultInPercentage <= 50) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Try Again. It looks like some fields were filled incorrectly.",
-                        'success'
-                    )
-                } else if (resultInPercentage > 50 && resultInPercentage < 76) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Well Done. It looks like more than half of the fields were filled correctly.",
-                        'success'
-                    )
+                    let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                    let resultInPercentage = totalCorrectAnswers / 36;
+                    resultInPercentage = resultInPercentage * 100;
+                    resultInPercentage = resultInPercentage.toFixed(0);
+                    if (resultInPercentage <= 50) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Try Again. It looks like some fields were filled incorrectly.",
+                            'success'
+                        )
+                    } else if (resultInPercentage > 50 && resultInPercentage < 76) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Well Done. It looks like more than half of the fields were filled correctly.",
+                            'success'
+                        )
 
-                } else if (resultInPercentage > 75) {
-                    Swal.fire(
-                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                        totalTime,
-                        "Excellent. It looks like All fields were filled correctly.",
-                        'success'
-                    )
+                    } else if (resultInPercentage > 75) {
+                        Swal.fire(
+                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                            totalTime,
+                            "Excellent. It looks like All fields were filled correctly.",
+                            'success'
+                        )
 
+                    }
+
+                    document.getElementById('SubmitButton').style.display = "none"
+                    document.getElementById('RestartTestButton').style.display = ""
                 }
-
-                document.getElementById('SubmitButton').style.display = "none"
-                document.getElementById('RestartTestButton').style.display = ""
+            } else {
+                Swal.fire(
+                    'Download CSV : ',
+                    "You have to Download The CSV First From the Top Of The Page Than Match the Values With It Than Submit",
+                    'error'
+                )
             }
+
         }
 
         function restartTest() {
             window.location.href = window.location.href;
+        }
+        var checkIfDownloadCSVButtonIsClicked = false;
+
+        function downloadCsvWithRandomData() {
+            this.axios.post("{{ route('generateCSVWithRandomDataForInvoiceProcessing') }}", {})
+                .then(function(response) {
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Well Done...',
+                    //     text: 'CSV Generated!',
+                    // })
+                    checkIfDownloadCSVButtonIsClicked = true;
+                    document.getElementById('linkForCSV_fileDownloadForInvoiceProcessing').click();
+                })
+                .catch(function(error) {
+                    console.log(error.response);
+                });
         }
 
 

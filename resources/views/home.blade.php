@@ -83,7 +83,7 @@
                                                     validate that the transaction appears/cleared in the company’s bank.
                                                     <br>
                                                     <hr>
-                                                   
+
                                                 </p>
                                                 <a style="text-decoration: none" href="Challenge_1"
                                                     class="purpleButton">View More</a>
@@ -120,7 +120,8 @@
                                                     the shopping order before acknowledging the terms and submitting the
                                                     order. Once the order has been submitted, the scoring modal will display
                                                     your results.
-
+                                                    <br>
+                                                    <hr>
                                                 </p>
                                                 <a style="text-decoration: none" href="Challenge_2"
                                                     class="purpleButton">View More</a>
@@ -166,7 +167,8 @@
                                                     invoice. Process all invoices to display the scoring modal with your
                                                     challenge results.
 
-
+                                                    <br>
+                                                    <hr>
                                                 </p>
                                                 <a style="text-decoration: none" href="Challenge_3"
                                                     class="purpleButton">View More</a>
@@ -207,7 +209,8 @@
                                                     management system. Download the new customers CSV and correctly enter
                                                     the customer onboarding details for each new customer. Once all new
                                                     customers have been added, the scoring modal will display your results.
-
+                                                    <br>
+                                                    <hr>
                                                 </p>
                                                 <a style="text-decoration: none" href="Challenge_4"
                                                     class="purpleButton">View More</a>

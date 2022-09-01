@@ -37,4 +37,8 @@ Route::group(['middleware' => ['checkLogin']], function () {
     Route::post('/invoiceProcessingResult', [ChallengeResult::class, 'invoiceProcessing'])->name('invoiceProcessingResult');
     Route::post('/lunchOrderingResult', [ChallengeResult::class, 'lunchOrdering'])->name('lunchOrderingResult');
 
+    // Creating CSV with Random Data
+    Route::post('/invoiceProcessingResult/generateCSV', [ChallengeResult::class, 'generateCSVWithRandomDataForInvoiceProcessing'])->name('generateCSVWithRandomDataForInvoiceProcessing');
+    Route::post('/customerOnboardingResult/generateCSV', [ChallengeResult::class, 'generateCSVWithRandomDataForCustomerOnboarding'])->name('generateCSVWithRandomDataForCustomerOnboarding');
+
 });
