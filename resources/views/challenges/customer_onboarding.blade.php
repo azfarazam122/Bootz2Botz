@@ -96,7 +96,9 @@
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Bootz2Botz - <span style="color: #f79c51"> CUSTOMER ONBOARDING
+                                <h1 style="font-size: 3.7rem;">
+Clie-Intel
+  <span style="color: #f79c51">
                                     </span></h1>
 
                             </div>
@@ -120,11 +122,7 @@
                             <div class="headertext">
 
                                 <p>
-                                    New corporate customers need to be added to The Cable Co's customer relationship
-                                    management system. Download the CSV below and enter each missing customer's information.
-                                    Click 'Register' after entering each customer's details to commit them to the CRM. Once
-                                    all 7 customers' details have been entered, your score for the exercise will be
-                                    displayed.
+                                Download the csv with all your new corporate intelligence and enter the missing information into our system. Make sure to click “register” after entering each customers details or you won’t be given credit for all your hard work. You also won’t move onto the next round. Dagger. 
 
                                     <br> <br>
                                     {{-- <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
@@ -144,7 +142,7 @@
 
                             <div class="transactionBox mt-5">
                                 <div class="headerBlack">
-                                    <h3>Customer OnBoarding
+                                    <h3>Clie-Intel
 
                                         </h2>
                                         <p>Please fill in customer details to add each new customer to the customer

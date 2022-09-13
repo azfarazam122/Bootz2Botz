@@ -62,7 +62,8 @@
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
-                                        Quarter Close- Review Transaction
+                                    End of Quarter Review
+
                                     </h1>
                                 </div>
 
@@ -74,13 +75,8 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    Many automation use cases require researching and validating data across
-                                                    multiple systems. In this challenge, the finance department of Peters
-                                                    Manufacturing spends a significant amount of time doing very important
-                                                    work: making sure that all of the financial obligations were met, they
-                                                    were invoiced on time, that they paid on time and that, all payments
-                                                    cleared in the expected time period. For each listed transaction,
-                                                    validate that the transaction appears/cleared in the company’s bank.
+                                                It’s that time of the quarter, review time! We all know how fun it is to crunch all those numbers. We all just wish it were that time of the quarter every day……right? No way. That’s why we are going to automate this task. 
+
                                                     <br>
                                                     <hr>
 
@@ -102,7 +98,8 @@
                                 <div class="header-chal">
                                     <h1>
 
-                                        Online Grocery Ordering
+                                    Grocery Store? I don’t think so!
+
                                     </h1>
                                 </div>
 
@@ -114,12 +111,8 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    Learning to interact with both web objects and data sources is key to
-                                                    being a successful RPA developer. In this challenge, you’ll need to
-                                                    download the provided shopping list and add each item from the list to
-                                                    the shopping order before acknowledging the terms and submitting the
-                                                    order. Once the order has been submitted, the scoring modal will display
-                                                    your results.
+                                                If you want to win this one, you will have to download the shopping list from the page and then add each item from the provided list onto your order. If you want your food, don’t forget to acknowledge the site’s terms and complete your order! 
+
                                                     <br>
                                                     <hr>
                                                 </p>
@@ -144,7 +137,9 @@
 
 
 
-                                        Invoice Processing – Accounts Payable
+                                    All the Invoices 
+
+
                                     </h1>
                                 </div>
 
@@ -156,16 +151,8 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    Almost all organizations have an Accounts Payable department –
-                                                    responsible for vendor/partner invoice processing among other tasks. In
-                                                    this challenge, invoice details from various vendors need to be entered
-                                                    into the Integrated Invoicing Solutions web app. Download the provided
-                                                    zip of invoices and extract all invoice data (invoice number, invoice
-                                                    date, invoice total, as well as quantity, item description, and total
-                                                    price for each line item). With all data extracted, enter all invoice
-                                                    data into the provided web app before uploading and submitting each
-                                                    invoice. Process all invoices to display the scoring modal with your
-                                                    challenge results.
+                                                Every company wants to make money, it’s how you get paid. But to do that, the company needs to have a good system of entering its invoices into their newly designed web app. Automation is the key to simplifying this process. Let’s see what you can do. 
+
 
                                                     <br>
                                                     <hr>
@@ -191,7 +178,9 @@
                                     <h1>
 
 
-                                        Customer Onboarding – Front Office
+                                    
+Clie-Intel
+
                                     </h1>
                                 </div>
 
@@ -203,12 +192,8 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    Almost all production bots will require some use of selection statements
-                                                    (if/else) and repetition (looping). In this challenge, new corporate
-                                                    customers need to be added to The Cable Co’s customer relationship
-                                                    management system. Download the new customers CSV and correctly enter
-                                                    the customer onboarding details for each new customer. Once all new
-                                                    customers have been added, the scoring modal will display your results.
+                                                You have such a great personality that you were able to establish new friendships…..or at least business relationships. Take all the information you were able to pull out of your new “friends” and put them into our information collection system…..errr……customer relationship management tool. 
+
                                                     <br>
                                                     <hr>
                                                 </p>

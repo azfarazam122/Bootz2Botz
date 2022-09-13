@@ -96,7 +96,8 @@
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Bootz2Botz - <span style="color: #f79c51"> Invoice Entry
+                                <h1 style="font-size: 3.7rem;">All the  
+  <span style="color: #f79c51"> Invoices
                                     </span></h1>
 
                             </div>
@@ -120,10 +121,8 @@
                             <div class="headertext">
 
                                 <p class="lead">
-                                    Invoices received from various company vendors must be entered into the Integrated
-                                    Invoicing Solutions accounting app. Download the zip of the invoices below for
-                                    processing. Add each invoice's details to the form below, pressing submit between each
-                                    entry. Once all invoices have been entered, the challenge is complete.
+                                Invoices received from various company vendors must be entered into the Integrated Invoicing Solutions accounting app. Download the zip of the invoices below for processing. Add each invoice's details to the form below, pressing submit between each entry. Once all invoices have been entered, the challenge is complete.
+
 
 
 
@@ -148,7 +147,7 @@
 
                             <div class="transactionBox mt-5">
                                 <div class="headerBlack">
-                                    <h3>Invoice Processing
+                                    <h3>All the Invoices
 
                                         </h2>
                                         <p class="lead">Add invoice details below for proper accounting and reporting.
@@ -245,10 +244,8 @@
                                                 </h2>
 
                                                 <p>
-                                                    Each invoice detail must also be submitted with the invoice file
-                                                    itself for tax purposes. Please select the accompying invoice
-                                                    image
-                                                    as PDF, TIF/TIFF, JPEG/JPG or PNG.
+                                                Enter all the details. All of them. Then select the invoice image as a PDF, TIF, JPEG or PNG. 
+
 
 
                                                 </p>
@@ -266,14 +263,13 @@
                                                 <h2> Submit Invoice
                                                 </h2>
                                                 <p>
-                                                    By submitting the invoice above, I acknowledge that the invoice details
-                                                    are true to the best of my knowledge. Once the invoice is submitted, it
-                                                    will go through an approval process before payment is submitted. For
-                                                    immediate payment or questions, please contact the Accounts Payable team
-                                                    at AP_Processing@FakeCompany.com
+                                                By submitting the invoice above, I acknowledge that the invoice details are true to the best of my automation ability. If it is not accurate, I will likely lose this round and not move on to the next. 
+
                                                     <br>
 
-                                                    Please acknowledge that you agree to the terms above:
+                                                    Please acknowledge that these are the terms, and you must click this box whether or not you agree with them, to move onto the next round. 
+
+
 
 
 

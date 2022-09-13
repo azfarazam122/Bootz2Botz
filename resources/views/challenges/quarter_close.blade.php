@@ -16,8 +16,9 @@
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Quarter Close - <span style="color: #f79c51"> Review
-                                        Transaction </span></h1>
+                                <h1 style="font-size: 3.7rem;">End of Quarter 
+ - <span style="color: #f79c51"> Review
+                                         </span></h1>
 
                             </div>
 
@@ -35,16 +36,10 @@
 
                             <div class="headertext">
                                 <p>
-                                    The finance department of Peters Manufacturing needs your help. At the end of each
-                                    fiscal quarter, the finance team spends a significant amount of time doing very
-                                    important work: making sure that all of the financial obligations that were met,
-                                    they were invoiced on time, that they paid on time and that, all payments cleared in
-                                    the expected time period.
+                                You’ve been designated as the one person that can make an improvement in the review process by automating a function of our review. Check for confirmed matches. Where there is a match, mark it as “verified.” If there is no match, label it as “unverified” so that the team can look into the line item a little deeper. Saving this many man hours would make any parent proud! 
+
                                     <br>
-                                    For each of the transactions below, find the matching transaction in the Arcadia
-                                    Banking application. If a match is found, mark the transaction as 'Verified'. If no
-                                    match is found, mark the trasaction as 'Unverified' so that the finance team can dig
-                                    into this transaction further.
+                                    
                                     <br> <br>
                                 <p class="my-0"> <b> Kado BankUsername:</b> Jeremy@gmail.com </p>
                                 <p> <b> Kado Bank Password:</b> Jeremy1234! </p>
