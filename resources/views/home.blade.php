@@ -216,10 +216,48 @@ Clie-Intel
 
 
 
-                        </div>
 
 
 
+<!-- phase 2 start here  -->
+
+<!-- challenge 5 rpa challenge  -->
+
+
+                        
+                        <div class="challenge">
+                                <div class="header-chal">
+                                    <h1>
+
+
+                                    RPA challenge
+                                    </h1>
+                                </div>
+
+                                <div class="body-chal">
+                                    <div class="row">
+                                        <div class="col-lg-3 p-3 pt-4 ps-5">
+                                            <img src="images/rpa.png" width="100%" alt="" srcset="">
+                                        </div>
+                                        <div class="row col-lg-9 p-3">
+                                            <div class="col-10">
+                                                <p>
+                                                You have such a great personality that you were able to establish new friendships…..or at least business relationships. Take all the information you were able to pull out of your new “friends” and put them into our information collection system…..errr……customer relationship management tool. 
+
+                                                    <br>
+                                                    <hr>
+                                                </p>
+                                                <a style="text-decoration: none" href="Challenge_5"
+                                                    class="purpleButton">View More</a>
+                                            </div>
+                                            <div class="col-2">
+                                                <img width="100%" src="images/dif.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+</div>
                         <!-- footer -->
                         <!-- footer -->
                         <!-- footer -->
