@@ -97,9 +97,10 @@
                         <div class="blackline">
                             <div class="hero-text">
                                 <h1 style="font-size: 3.7rem;">
-Clie-Intel
-  <span style="color: #f79c51">
-                                    </span></h1>
+                                    Clie-Intel
+                                    <span style="color: #f79c51">
+                                    </span>
+                                </h1>
 
                             </div>
                         </div>
@@ -122,7 +123,10 @@ Clie-Intel
                             <div class="headertext">
 
                                 <p>
-                                Download the csv with all your new corporate intelligence and enter the missing information into our system. Make sure to click “register” after entering each customers details or you won’t be given credit for all your hard work. You also won’t move onto the next round. Dagger. 
+                                    Download the csv with all your new corporate intelligence and enter the missing
+                                    information into our system. Make sure to click “register” after entering each customers
+                                    details or you won’t be given credit for all your hard work. You also won’t move onto
+                                    the next round. Dagger.
 
                                     <br> <br>
                                     {{-- <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"

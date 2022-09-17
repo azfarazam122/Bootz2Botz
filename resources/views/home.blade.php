@@ -62,7 +62,7 @@
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
-                                    End of Quarter Review
+                                        End of Quarter Review
 
                                     </h1>
                                 </div>
@@ -75,13 +75,16 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                It’s that time of the quarter, review time! We all know how fun it is to crunch all those numbers. We all just wish it were that time of the quarter every day……right? No way. That’s why we are going to automate this task. 
+                                                    It’s that time of the quarter, review time! We all know how fun it is to
+                                                    crunch all those numbers. We all just wish it were that time of the
+                                                    quarter every day……right? No way. That’s why we are going to automate
+                                                    this task.
 
                                                     <br>
                                                     <hr>
 
                                                 </p>
-                                                <a style="text-decoration: none" href="Challenge_1"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_1"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -98,7 +101,7 @@
                                 <div class="header-chal">
                                     <h1>
 
-                                    Grocery Store? I don’t think so!
+                                        Grocery Store? I don’t think so!
 
                                     </h1>
                                 </div>
@@ -111,12 +114,15 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                If you want to win this one, you will have to download the shopping list from the page and then add each item from the provided list onto your order. If you want your food, don’t forget to acknowledge the site’s terms and complete your order! 
+                                                    If you want to win this one, you will have to download the shopping list
+                                                    from the page and then add each item from the provided list onto your
+                                                    order. If you want your food, don’t forget to acknowledge the site’s
+                                                    terms and complete your order!
 
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" href="Challenge_2"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_2"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -137,7 +143,7 @@
 
 
 
-                                    All the Invoices 
+                                        All the Invoices
 
 
                                     </h1>
@@ -151,13 +157,16 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                Every company wants to make money, it’s how you get paid. But to do that, the company needs to have a good system of entering its invoices into their newly designed web app. Automation is the key to simplifying this process. Let’s see what you can do. 
+                                                    Every company wants to make money, it’s how you get paid. But to do
+                                                    that, the company needs to have a good system of entering its invoices
+                                                    into their newly designed web app. Automation is the key to simplifying
+                                                    this process. Let’s see what you can do.
 
 
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" href="Challenge_3"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_3"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -178,8 +187,8 @@
                                     <h1>
 
 
-                                    
-Clie-Intel
+
+                                        Clie-Intel
 
                                     </h1>
                                 </div>
@@ -192,12 +201,16 @@ Clie-Intel
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                You have such a great personality that you were able to establish new friendships…..or at least business relationships. Take all the information you were able to pull out of your new “friends” and put them into our information collection system…..errr……customer relationship management tool. 
+                                                    You have such a great personality that you were able to establish new
+                                                    friendships…..or at least business relationships. Take all the
+                                                    information you were able to pull out of your new “friends” and put them
+                                                    into our information collection system…..errr……customer relationship
+                                                    management tool.
 
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" href="Challenge_4"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_4"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -219,18 +232,18 @@ Clie-Intel
 
 
 
-<!-- phase 2 start here  -->
+                            <!-- phase 2 start here  -->
 
-<!-- challenge 5 rpa challenge  -->
+                            <!-- challenge 5 rpa challenge  -->
 
 
-                        
-                        <div class="challenge">
+
+                            <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
 
 
-                                    RPA challenge
+                                        RPA challenge
                                     </h1>
                                 </div>
 
@@ -242,12 +255,16 @@ Clie-Intel
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                You have such a great personality that you were able to establish new friendships…..or at least business relationships. Take all the information you were able to pull out of your new “friends” and put them into our information collection system…..errr……customer relationship management tool. 
+                                                    You have such a great personality that you were able to establish new
+                                                    friendships…..or at least business relationships. Take all the
+                                                    information you were able to pull out of your new “friends” and put them
+                                                    into our information collection system…..errr……customer relationship
+                                                    management tool.
 
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" href="Challenge_5"
+                                                <a style="text-decoration: none" target="blank" href="/Challenge_5"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -257,7 +274,7 @@ Clie-Intel
                                     </div>
                                 </div>
                             </div>
-</div>
+                        </div>
                         <!-- footer -->
                         <!-- footer -->
                         <!-- footer -->

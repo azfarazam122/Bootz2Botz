@@ -97,9 +97,10 @@
                         <div class="blackline">
                             <div class="hero-text">
                                 <h1 style="font-size: 3.7rem;">
-RPA CHallenge
-  <span style="color: #f79c51">
-                                    </span></h1>
+                                    RPA CHallenge
+                                    <span style="color: #f79c51">
+                                    </span>
+                                </h1>
 
                             </div>
                         </div>
@@ -122,15 +123,18 @@ RPA CHallenge
                             <div class="headertext">
 
                                 <p>
-                                Download the csv with all your new corporate intelligence and enter the missing information into our system. Make sure to click “register” after entering each customers details or you won’t be given credit for all your hard work. You also won’t move onto the next round. Dagger. 
+                                    Download the csv with all your new corporate intelligence and enter the missing
+                                    information into our system. Make sure to click “register” after entering each customers
+                                    details or you won’t be given credit for all your hard work. You also won’t move onto
+                                    the next round. Dagger.
 
                                     <br> <br>
                                     {{-- <a style="text-decoration: none" href="{{ asset('images/Missing Customers.csv') }}"
                                         download='Missing Customers.csv' class="purpleButton">Download
                                         CSV </a> --}}
-                                    <a style="text-decoration: none" id="linkForCSV_fileDownloadForCustomerOnboarding"
-                                        href="{{ asset('assets/RandomCSV/missing-customer.csv') }}"
-                                        download='missing-customer.csv' class="purpleButton d-none">Download
+                                    <a style="text-decoration: none" id="linkForCSV_fileDownloadForRpaChallenge"
+                                        href="{{ asset('assets/RandomCSV/rpa-challenge.csv') }}"
+                                        download='rpa-challenge.csv' class="purpleButton d-none">Download
                                         CSV</a>
                                     <button style="text-decoration: none" onclick="downloadCsvWithRandomData()"
                                         class="purpleButton">Download
@@ -168,7 +172,7 @@ RPA CHallenge
                                                 last Name I
                                             </label> <br>
                                             <input type="text" placeholder="Last Name" class="form-control"
-                                                name="" style="width:100%;" id="last_namw">
+                                                name="" style="width:100%;" id="last_name">
                                         </div>
                                     </div>
                                     <!--  -->
@@ -186,12 +190,12 @@ RPA CHallenge
                                             <label for="">
                                                 Email
                                             </label> <br>
-                                            <input type="text" placeholder="Email" class="form-control"
-                                                name="" style="width:100%;" id="email">
+                                            <input type="text" placeholder="Email" class="form-control" name=""
+                                                style="width:100%;" id="email">
                                         </div>
                                     </div>
                                     <!--  -->
-                                   
+
 
 
                                     <div class="row my-4">
@@ -199,8 +203,8 @@ RPA CHallenge
                                             <label for="">
                                                 Address
                                             </label> <br>
-                                            <input type="text" placeholder="Address" class="form-control"
-                                                name="" style="width:100%;" id="address">
+                                            <input type="text" placeholder="Address" class="form-control" name=""
+                                                style="width:100%;" id="address">
                                         </div>
                                         <div class="col-lg-6 mt-3">
                                             <label for="">
@@ -218,18 +222,18 @@ RPA CHallenge
                                     <div class="row my-4">
                                         <div class="col-lg-6 mt-3">
                                             <label for="">
-                                               Company Name
+                                                Company Name
                                             </label> <br>
                                             <input type="text" placeholder="Company Name" class="form-control"
                                                 name="" style="width:100%;" id="company_name">
                                         </div>
-                                       
+
                                     </div>
 
                                     <!--  -->
 
 
-                                  
+
 
 
 
@@ -241,16 +245,19 @@ RPA CHallenge
                             <br>
                             <div class="row col-md-6">
                                 <div class="col-md-6 text-start">
-                                    <a style="text-decoration: none" id="SubmitButton"
-                                        onclick="randomPositions()"
+                                    <a style="text-decoration: none" id="SubmitButton" onclick="rpaChallengesSubmit()"
                                         class="btn btn-dark btn-lg col-md-9 fs-4">Submit</a>
                                     <a style="text-decoration: none; display: none" id="RestartTestButton"
                                         onclick="restartTest()" class="btn btn-dark btn-lg col-md-9 fs-4">Restart Test</a>
                                 </div>
                                 <!-- /////////////////////// -->
                                 <div class="col-md-6 text-end lead fs-2">
-                                    <div style="display: none" id="resultBoxMainDiv">Result : <span class="lead fs-2"
-                                            id="noOfTimesSubmitButtonClickAndAnswer"></span>
+                                    <div style="display: none" id="resultBoxMainDiv">
+                                        <div> Result : <span class="lead fs-2"
+                                                id="noOfTimesSubmitButtonClickAndAnswer"></span>
+                                        </div>
+                                        <div> Count : <span class="lead fs-2" id="noOfTimesSubmitButtonClick"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -259,15 +266,6 @@ RPA CHallenge
 
                         </div>
 
-<script>
-function randomPositions() {
-
-    var bodyTransaction = document.querySelector('.bodyTransaction');
-    for (var i = bodyTransaction.children.length; i >= 0; i--) {
-        bodyTransaction.appendChild(bodyTransaction.children[Math.random() * i | 0]);
-    }
-}
-</script>
                         <!-- footer -->
 
                         <footer class="footer" style="margin-top: 200px">
@@ -347,36 +345,44 @@ function randomPositions() {
         </div>
     </div>
     <script>
+        function randomPositions() {
+
+            var bodyTransaction = document.querySelector('.bodyTransaction');
+            for (var i = bodyTransaction.children.length; i >= 0; i--) {
+                bodyTransaction.appendChild(bodyTransaction.children[Math.random() * i | 0]);
+            }
+        }
         var noOfTimesSubmitButtonClick = 0;
         var noOfCorrectAnswers = [];
         start();
 
-        function customerOnBoardingSubmit() {
+        function rpaChallengesSubmit() {
             if (checkIfDownloadCSVButtonIsClicked == true) {
                 if (noOfTimesSubmitButtonClick == 0) {
                     startTime = new Date();
                 }
                 if (noOfTimesSubmitButtonClick < 10) {
                     let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
+                    let countBox = document.getElementById('noOfTimesSubmitButtonClick');
                     let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
                     resultBoxMainDiv.style.display = "";
                     // // ________________________________
-                    this.axios.post("{{ route('customerOnboardingResult') }}", {
+                    this.axios.post("{{ route('rpaChallengeResult') }}", {
                             no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
-                            customer_name: document.getElementById('customer_name').value,
-                            customer_id: document.getElementById('customer_id').value,
-                            primary_contact: document.getElementById('primary_contact').value,
-                            street_address: document.getElementById('street_address').value,
-                            city: document.getElementById('city').value,
-                            state: document.getElementById('state').value,
-                            zipcode: document.getElementById('zipcode').value,
+                            first_name: document.getElementById('first_name').value,
+                            last_name: document.getElementById('last_name').value,
+                            phone_number: document.getElementById('phone_number').value,
                             email: document.getElementById('email').value,
+                            address: document.getElementById('address').value,
+                            role_in_company: document.getElementById('role_in_company').value,
+                            company_name: document.getElementById('company_name').value,
                         })
                         .then(function(response) {
                             noOfCorrectAnswers.push(numeral(response.data).value());
                             let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
                             noOfTimesSubmitButtonClick++;
-                            resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 8);
+                            resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 7);
+                            countBox.innerHTML = noOfTimesSubmitButtonClick;
                             if (noOfTimesSubmitButtonClick == 10) {
                                 document.getElementById('SubmitButton').innerHTML = "Check Result"
                             }
@@ -396,8 +402,6 @@ function randomPositions() {
                 } else if (noOfTimesSubmitButtonClick == 10) {
                     stop();
                     let totalTime = document.getElementById('stopwatch').innerHTML;
-
-
                     let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
                     let resultInPercentage = totalCorrectAnswers / 64;
                     resultInPercentage = resultInPercentage * 100;
@@ -446,15 +450,10 @@ function randomPositions() {
         var checkIfDownloadCSVButtonIsClicked = false;
 
         function downloadCsvWithRandomData() {
-            this.axios.post("{{ route('generateCSVWithRandomDataForCustomerOnboarding') }}", {})
+            this.axios.post("{{ route('generateCSVWithRandomDataForRpaChallenge') }}", {})
                 .then(function(response) {
-                    // Swal.fire({
-                    //     icon: 'success',
-                    //     title: 'Well Done...',
-                    //     text: 'CSV Generated!',
-                    // })
                     checkIfDownloadCSVButtonIsClicked = true;
-                    document.getElementById('linkForCSV_fileDownloadForCustomerOnboarding').click();
+                    document.getElementById('linkForCSV_fileDownloadForRpaChallenge').click();
                 })
                 .catch(function(error) {
                     console.log(error.response);
