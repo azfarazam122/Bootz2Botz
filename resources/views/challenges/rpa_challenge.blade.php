@@ -347,16 +347,19 @@
     <script>
         function randomPositions() {
 
-            var bodyTransaction = document.querySelector('.bodyTransaction');
-            for (var i = bodyTransaction.children.length; i >= 0; i--) {
-                bodyTransaction.appendChild(bodyTransaction.children[Math.random() * i | 0]);
-            }
+          
         }
         var noOfTimesSubmitButtonClick = 0;
         var noOfCorrectAnswers = [];
         start();
 
         function rpaChallengesSubmit() {
+            var bodyTransaction = document.querySelector('.bodyTransaction');
+            for (var i = bodyTransaction.children.length; i >= 0; i--) {
+                bodyTransaction.appendChild(bodyTransaction.children[Math.random() * i | 0]);
+            }
+
+
             if (checkIfDownloadCSVButtonIsClicked == true) {
                 if (noOfTimesSubmitButtonClick == 0) {
                     startTime = new Date();

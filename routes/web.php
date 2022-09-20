@@ -30,6 +30,8 @@ Route::group(['middleware' => ['checkLogin']], function () {
     Route::view('/Challenge_3', 'challenges.invoice_accounts');
     Route::view('/Challenge_4', 'challenges.customer_onboarding');
     Route::view('/Challenge_5', 'challenges.rpa_challenge');
+    Route::view('/Challenge_6', 'challenges.lunch_ordering_extreme');
+
 
     Route::view('/Bank', 'bank_system');
 

@@ -274,6 +274,47 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+                                    <!-- chal 6 -->
+
+                                    <div class="challenge">
+                                <div class="header-chal">
+                                    <h1>
+
+                                        Grocery Store Extreme Version!
+
+                                    </h1>
+                                </div>
+
+                                <div class="body-chal">
+                                    <div class="row">
+                                        <div class="col-lg-3 p-3 pt-4 ps-5">
+                                            <img src="images/grocery.png" width="100%" alt="" srcset="">
+                                        </div>
+                                        <div class="row col-lg-9 p-3">
+                                            <div class="col-10">
+                                                <p>
+                                                   So, This one is similiar to Grocery Store that you have playe above but guess what? We have 
+                                                   a little twist for you. After some iterations new fields will be added and let's see how you
+                                                   tackle it, Interested? Click and play now!
+
+                                                    <br>
+                                                    <hr>
+                                                </p>
+                                                <a style="text-decoration: none" target="blank" href="Challenge_6"
+                                                    class="purpleButton">View More</a>
+                                            </div>
+                                            <div class="col-2">
+                                                <img width="100%" src="images/dif.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- footer -->
                         <!-- footer -->
