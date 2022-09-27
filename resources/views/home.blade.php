@@ -34,31 +34,12 @@
                             </div>
                         </div>
 
-
-
-
-
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-                        <!-- all challnmges  -->
-
+                        {{-- ALL CHALLENGES LIST --}}
+                        {{-- ALL CHALLENGES LIST --}}
+                        {{-- ALL CHALLENGES LIST --}}
                         <div class="container mt-5" style="margin-top: 100px !important;">
-                            <!-- chal 1 -->
+
+                            <!-- END OF QUARTER REVIEW-->
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
@@ -75,9 +56,11 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    It’s that time of the quarter, review time! We all know how fun it is to
+                                                    It’s that time of the quarter, review time! We all know how fun it
+                                                    is to
                                                     crunch all those numbers. We all just wish it were that time of the
-                                                    quarter every day……right? No way. That’s why we are going to automate
+                                                    quarter every day……right? No way. That’s why we are going to
+                                                    automate
                                                     this task.
 
                                                     <br>
@@ -95,8 +78,8 @@
                                 </div>
                             </div>
 
-                            <!-- chal 3 -->
 
+                            {{-- GROCERY STORE --}}
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
@@ -114,8 +97,10 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    If you want to win this one, you will have to download the shopping list
-                                                    from the page and then add each item from the provided list onto your
+                                                    If you want to win this one, you will have to download the shopping
+                                                    list
+                                                    from the page and then add each item from the provided list onto
+                                                    your
                                                     order. If you want your food, don’t forget to acknowledge the site’s
                                                     terms and complete your order!
 
@@ -134,18 +119,11 @@
                             </div>
 
 
-                            <!-- chal 3 -->
-
+                            {{-- ALL THE INVOICES --}}
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
-
-
-
-
                                         All the Invoices
-
-
                                     </h1>
                                 </div>
 
@@ -158,8 +136,10 @@
                                             <div class="col-10">
                                                 <p>
                                                     Every company wants to make money, it’s how you get paid. But to do
-                                                    that, the company needs to have a good system of entering its invoices
-                                                    into their newly designed web app. Automation is the key to simplifying
+                                                    that, the company needs to have a good system of entering its
+                                                    invoices
+                                                    into their newly designed web app. Automation is the key to
+                                                    simplifying
                                                     this process. Let’s see what you can do.
 
 
@@ -180,8 +160,7 @@
 
 
 
-                            <!-- chal 4 -->
-
+                            <!-- CLIE-INTEL -->
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
@@ -201,9 +180,11 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    You have such a great personality that you were able to establish new
+                                                    You have such a great personality that you were able to establish
+                                                    new
                                                     friendships…..or at least business relationships. Take all the
-                                                    information you were able to pull out of your new “friends” and put them
+                                                    information you were able to pull out of your new “friends” and put
+                                                    them
                                                     into our information collection system…..errr……customer relationship
                                                     management tool.
 
@@ -234,10 +215,8 @@
 
                             <!-- phase 2 start here  -->
 
-                            <!-- challenge 5 rpa challenge  -->
 
-
-
+                            {{-- RPA CHALLENGE --}}
                             <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
@@ -255,9 +234,11 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                    You have such a great personality that you were able to establish new
+                                                    You have such a great personality that you were able to establish
+                                                    new
                                                     friendships…..or at least business relationships. Take all the
-                                                    information you were able to pull out of your new “friends” and put them
+                                                    information you were able to pull out of your new “friends” and put
+                                                    them
                                                     into our information collection system…..errr……customer relationship
                                                     management tool.
 
@@ -279,9 +260,9 @@
 
 
 
-                                    <!-- chal 6 -->
 
-                                    <div class="challenge">
+                            {{-- GROCERY STORE EXTREME --}}
+                            <div class="challenge">
                                 <div class="header-chal">
                                     <h1>
 
@@ -298,9 +279,13 @@
                                         <div class="row col-lg-9 p-3">
                                             <div class="col-10">
                                                 <p>
-                                                   So, This one is similiar to Grocery Store that you have playe above but guess what? We have 
-                                                   a little twist for you. After some iterations new fields will be added and let's see how you
-                                                   tackle it, Interested? Click and play now!
+                                                    So, This one is similiar to Grocery Store that you have playe above
+                                                    but
+                                                    guess what? We have
+                                                    a little twist for you. After some iterations new fields will be
+                                                    added
+                                                    and let's see how you
+                                                    tackle it, Interested? Click and play now!
 
                                                     <br>
                                                     <hr>
@@ -315,38 +300,53 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
-                        <!-- footer -->
 
+
+
+
+                            {{-- MOVIE NIGHT CHALLENGE --}}
+                            <div class="challenge">
+                                <div class="header-chal">
+                                    <h1>
+
+                                        Movie Night
+
+                                    </h1>
+                                </div>
+
+                                <div class="body-chal">
+                                    <div class="row">
+                                        <div class="col-lg-3 p-3 pt-4 ps-5">
+                                            <img src="images/movie.jpg" width="100%" alt="" srcset="">
+                                        </div>
+                                        <div class="row col-lg-9 p-3">
+                                            <div class="col-10">
+                                                <p>
+                                                    Tell Us some Information about the movie shown to you and win!
+
+                                                    <br>
+                                                    <hr>
+                                                </p>
+                                                <a style="text-decoration: none" target="blank" href="/Challenge_7"
+                                                    class="purpleButton">View More</a>
+                                            </div>
+                                            <div class="col-2">
+                                                <img width="100%" src="images/dif.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        {{-- ALL CHALLENGES LIST --}}
+                        {{-- ALL CHALLENGES LIST --}}
+                        {{-- ALL CHALLENGES LIST --}}
+
+
+
+                        {{-- FOOTER --}}
                         <footer class="footer" style="margin-top: 200px">
                             <div class="container bottom_border">
                                 <div class="row">
@@ -417,6 +417,7 @@
                             </div>
 
                         </footer>
+                        {{-- FOOTER --}}
                     </div>
                     {{-- __________________________________________________________ --}}
 

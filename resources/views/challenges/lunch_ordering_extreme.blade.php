@@ -96,8 +96,8 @@
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Grocery Store 
- - <span style="color: #f79c51"> Extreme Version
+                                <h1 style="font-size: 3.7rem;">Grocery Store
+                                    - <span style="color: #f79c51"> Extreme Version
                                     </span></h1>
 
                             </div>
@@ -121,16 +121,24 @@
                                 <h2>Shopping List
                                 </h2>
                                 <p>
-                                Everyone’s got different food they want from the store. They have entered their choices into a spreadsheet. Download their list and be sure their food gets added to the order……or they could get angry and leave you out of the next round. 
+                                    Everyone’s got different food they want from the store. They have entered their choices
+                                    into a spreadsheet. Download their list and be sure their food gets added to the
+                                    order……or they could get angry and leave you out of the next round.
 
 
 
 
                                     <br> <br>
-                                    <a style="text-decoration: none" href="{{ asset('images/Lunch Order List.xlsx') }}"
-                                     download='Favourite Food.csv'   class="purpleButton">Download
+                                    {{-- <a style="text-decoration: none" href="{{ asset('images/Lunch Order List.xlsx') }}"
+                                        download='Favourite Food.csv' class="purpleButton">Download
                                         Favourite
-                                        Food Spreadsheet</a>
+                                        Food Spreadsheet</a> --}}
+
+                                    <a style="text-decoration: none" id="linkForCSV_fileDownloadForLunchOrderingExtreme"
+                                        href="{{ asset('images/Lunch Order Extreme List.xlsx') }}"
+                                        download='Lunch Order Extreme List.xlsx' class="purpleButton ">
+                                        Download Favourite Food Spreadsheet
+                                    </a>
 
                                 </p>
                             </div>
@@ -147,28 +155,42 @@
 
                                         <div id="totalListOfAllTheItems">
                                             <div class="col-lg-12" id="addAndDeleteItemFromList_1">
-                                                <label for="itemName_1">
-                                                    Enter Grocery Item to List
+                                                <label class="lead mb-1" for="itemName_1">
+                                                    Favourite Food
                                                 </label> <br>
                                                 <input type="text" class="form-control items" name=""
                                                     style="width:100%;" id="itemName_1">
                                             </div>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="col-lg-6">
-                                                <a style="text-decoration: none;" onclick="addItemInTheList()"
-                                                    class=" btn btn-success col-md-3 text-center "><i
-                                                        class="fa-solid fa-plus me-2"></i>Add
-                                                    Item</a>
+                                            <div class="col-lg-12" style="display: none" id="addAndDeleteItemFromList_2">
+                                                <label class="lead mb-1 mt-2" for="itemName_2">
+                                                    Family Member Name
+                                                </label> <br>
+                                                <input type="text" class="form-control items" name=""
+                                                    style="width:100%;" id="itemName_2">
                                             </div>
+                                            <div class="col-lg-12" style="display: none" id="addAndDeleteItemFromList_3">
+                                                <label class="lead mb-1 mt-2" for="itemName_3">
+                                                    Quantity
+                                                </label> <br>
+                                                <input type="number" class="form-control items" name=""
+                                                    style="width:100%;" id="itemName_3">
+                                            </div>
+                                            <div class="col-lg-12" style="display: none" id="addAndDeleteItemFromList_4">
+                                                <label class="lead mb-1 mt-2" for="itemName_4">
+                                                    Price Per Item ($)
+                                                </label> <br>
+                                                <input type="number" class="form-control items" name=""
+                                                    style="width:100%;" id="itemName_4">
+                                            </div>
+                                            <div class="col-lg-12" style="display: none" id="addAndDeleteItemFromList_5">
+                                                <label class="lead mb-1 mt-2" for="itemName_5">
+                                                    Total Price ($)
+                                                </label> <br>
+                                                <input type="number" class="form-control items" name=""
+                                                    style="width:100%;" id="itemName_5">
+                                            </div>
+                                        </div>
 
-                                            <div class="col-lg-6 p-0 text-end">
-                                                <a style="text-decoration: none;" onclick="resetListItems()"
-                                                    class="btn btn-dark  col-md-3 me-3  text-center"><i
-                                                        class="fa-solid fa-arrow-rotate-right me-2"></i>Reset
-                                                    List</a>
-                                            </div>
-                                        </div>
 
                                     </div>
 
@@ -179,12 +201,13 @@
                                         <div class="col-lg-12">
                                             <h2> Send My Order </h2>
                                             <p>
-                                            After you make sure that everyone’s favorites are entered, make sure the bot clicks on the submit button and you will find out how you did! 
+                                                After you make sure that everyone’s favorites are entered, make sure the bot
+                                                clicks on the submit button and you will find out how you did!
 
 
 
                                                 <br>
-<br>
+                                                <br>
                                                 Please acknowledge that you agree to the terms above:
 
                                             </p>
@@ -211,7 +234,25 @@
                                 </div>
                             </div>
                             <br>
-                            <a class="btn btn-dark btn-lg col-md-3 fs-4 " onclick="lunchOrderingSubmit()">Submit order</a>
+                            <div class="row col-md-6">
+                                <div class="col-md-6 text-start">
+                                    <a style="text-decoration: none" id="SubmitButton"
+                                        onclick="lunchOrderingExtremeSubmit()"
+                                        class="btn btn-dark btn-lg col-md-9 fs-4">Submit</a>
+                                    <a style="text-decoration: none; display: none" id="RestartTestButton"
+                                        onclick="restartTest()" class="btn btn-dark btn-lg col-md-9 fs-4">Restart Test</a>
+                                </div>
+                                <!-- /////////////////////// -->
+                                <div class="col-md-6 text-end lead fs-2">
+                                    <div style="display: none" id="resultBoxMainDiv">
+                                        <div> Result : <span class="lead fs-2"
+                                                id="noOfTimesSubmitButtonClickAndAnswer"></span>
+                                        </div>
+                                        <div> Count : <span class="lead fs-2" id="noOfTimesSubmitButtonClick"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -295,111 +336,99 @@
     </div>
 
     <script>
-        function addItemInTheList() {
-            var mainList = document.getElementById('totalListOfAllTheItems');
-            indexOfList = mainList.children.length + 1;
-            // Main Div
-            let div = document.createElement('div');
-            div.id = "addAndDeleteItemFromList_" + indexOfList;
-            div.classList = "mt-2";
-            // Label
-            let label = document.createElement('label');
-            label.setAttribute("for", "itemName_" + indexOfList);
-            label.innerHTML = "Enter Grocery Item to List <br>";
-            div.appendChild(label);
-            // Input
-            let input = document.createElement('input');
-            input.type = "text";
-            input.classList = "form-control items";
-            input.id = "itemName_" + indexOfList;
-            div.appendChild(input);
-            mainList.appendChild(div);
+        var noOfTimesSubmitButtonClick = 0;
+        var noOfCorrectAnswers = [];
+        start();
 
-        }
+        function lunchOrderingExtremeSubmit() {
 
-        function resetListItems() {
-            var mainList = document.getElementById('totalListOfAllTheItems');
-            lengthOfList = mainList.children.length;
-            for (let index = lengthOfList - 1; index > 0; index--) {
-                mainList.children[index].remove()
+            if (noOfTimesSubmitButtonClick < 25) {
+                if (noOfTimesSubmitButtonClick == 4) {
+                    document.getElementById('addAndDeleteItemFromList_2').style.display = "";
+                }
+                if (noOfTimesSubmitButtonClick == 9) {
+                    document.getElementById('addAndDeleteItemFromList_3').style.display = "";
+                }
+                if (noOfTimesSubmitButtonClick == 14) {
+                    document.getElementById('addAndDeleteItemFromList_4').style.display = "";
+                }
+                if (noOfTimesSubmitButtonClick == 19) {
+                    document.getElementById('addAndDeleteItemFromList_5').style.display = "";
+                }
+                let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
+                let countBox = document.getElementById('noOfTimesSubmitButtonClick');
+                let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
+                resultBoxMainDiv.style.display = "";
+                // ________________________________
+                this.axios.post("{{ route('lunchOrderingExtremeResult') }}", {
+                        no_of_time_submit_btn_click: (noOfTimesSubmitButtonClick + 1),
+                        favourite_food: document.getElementById('itemName_1').value,
+                        family_member_name: document.getElementById('itemName_2').value,
+                        quantity: document.getElementById('itemName_3').value,
+                        price_per_item: "$" + document.getElementById('itemName_4').value.toString(),
+                        total_price: "$" + document.getElementById('itemName_5').value.toString(),
+                    })
+                    .then(function(response) {
+                        noOfCorrectAnswers.push(numeral(response.data).value());
+                        let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                        resultBox.innerHTML = totalCorrectAnswers + "/" + (
+                            (noOfTimesSubmitButtonClick + 1) * 1);
+                        noOfTimesSubmitButtonClick++;
+                        countBox.innerHTML = noOfTimesSubmitButtonClick;
+                        if (noOfTimesSubmitButtonClick == 25) {
+                            document.getElementById('SubmitButton').innerHTML = "Check Result"
+                        }
+
+                    })
+                    .catch(function(error) {
+                        console.log(error.response);
+                    });
+                // ________________________________
+
+            } else if (noOfTimesSubmitButtonClick == 25) {
+                stop();
+                let totalTime = document.getElementById('stopwatch').innerHTML;
+                let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
+                let resultInPercentage = totalCorrectAnswers / 25;
+                resultInPercentage = resultInPercentage * 100;
+                resultInPercentage = resultInPercentage.toFixed(0);
+                if (resultInPercentage <= 50) {
+                    Swal.fire(
+                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                        totalTime,
+                        "Try Again. It looks like some fields were filled incorrectly.",
+                        'success'
+                    )
+                } else if (resultInPercentage > 50 && resultInPercentage < 76) {
+                    Swal.fire(
+                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                        totalTime,
+                        "Well Done. It looks like more than half of the fields were filled correctly.",
+                        'success'
+                    )
+
+                } else if (resultInPercentage > 75) {
+                    Swal.fire(
+                        'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
+                        totalTime,
+                        "Excellent. It looks like All fields were filled correctly.",
+                        'success'
+                    )
+
+                }
+
+                document.getElementById('SubmitButton').style.display = "none"
+                document.getElementById('RestartTestButton').style.display = ""
             }
+
+
+        }
+
+        function restartTest() {
+            window.location.href = window.location.href;
         }
 
 
-        var itemsArray = [];
-
-        function lunchOrderingSubmit() {
-            itemsArray = [];
-            for (let index = 0; index < document.getElementsByClassName('items').length; index++) {
-                itemsArray.push(document.getElementsByClassName('items')[index].value);
-
-            }
-            // let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
-            // let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
-            // resultBoxMainDiv.style.display = "";
-            // // ________________________________
-            this.axios.post("{{ route('lunchOrderingResult') }}", {
-                    items_array: itemsArray,
-                })
-                .then(function(response) {
-                    stop()
-                    let totalTime = document.getElementById('stopwatch').innerHTML;
-                    let totalCorrectAnswers = response.data;
-                    let resultInPercentage = totalCorrectAnswers / itemsArray.length;
-                    resultInPercentage = resultInPercentage * 100;
-                    resultInPercentage = resultInPercentage.toFixed(0);
-
-
-                    // noOfCorrectAnswers.push(numeral(response.data).value());
-                    // let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                    // noOfTimesSubmitButtonClick++;
-                    // resultBox.innerHTML = totalCorrectAnswers + "/" + (noOfTimesSubmitButtonClick * 6);
-                    // stop();
-                    // let totalTime = document.getElementById('stopwatch').innerHTML;
-
-
-                    // let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                    // let resultInPercentage = totalCorrectAnswers / 36;
-                    // resultInPercentage = resultInPercentage * 100;
-                    // resultInPercentage = resultInPercentage.toFixed(0);
-                    if (resultInPercentage <= 50) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Try Again. It looks like some fields were filled incorrectly.",
-                            'success'
-                        )
-                    } else if (resultInPercentage > 50 && resultInPercentage < 76) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Well Done. It looks like more than half of the fields were filled correctly.",
-                            'success'
-                        )
-
-                    } else if (resultInPercentage > 75) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Excellent. It looks like All fields were filled correctly.",
-                            'success'
-                        )
-
-                    }
-
-                })
-                .catch(function(error) {
-                    console.log(error.response);
-                });
-            // ________________________________
-
-
-
-            document.getElementById('SubmitButton').style.display = "none"
-            document.getElementById('RestartTestButton').style.display = ""
-        }
-
-        start()
         // Calculate Total Time Challenge Take
         const startBtn = document.getElementById('startBtn');
         const stopBtn = document.getElementById('stopBtn');

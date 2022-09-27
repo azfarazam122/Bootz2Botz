@@ -266,4 +266,66 @@ class ChallengeResult extends Controller
         echo $result;
 
     }
+
+    public function lunchOrderingExtreme(Request $req)
+    {
+        // echo count($req->items_array);
+        $totalFoodMatch = 0;
+
+        if ($req->no_of_time_submit_btn_click < 6) {
+            # code...
+
+            $data = DB::table('lunch_ordering_extreme')->where('favorite_food', '=', $req->favourite_food)->get();
+            if (count($data) > 0) {
+                # code...
+                $totalFoodMatch++;
+            }
+            echo $totalFoodMatch;
+
+        } else if ($req->no_of_time_submit_btn_click < 11) {
+
+            $data = DB::table('lunch_ordering_extreme')
+                ->where('favorite_food', '=', $req->favourite_food)
+                ->where('family_member', '=', $req->family_member_name)->get();
+            if (count($data) > 0) {
+                $totalFoodMatch++;
+            }
+            echo $totalFoodMatch;
+        } else if ($req->no_of_time_submit_btn_click < 16) {
+            $data = DB::table('lunch_ordering_extreme')
+                ->where('favorite_food', '=', $req->favourite_food)
+                ->where('family_member', '=', $req->family_member_name)
+                ->where('quantity', '=', $req->quantity)->get();
+            if (count($data) > 0) {
+                $totalFoodMatch++;
+            }
+            echo $totalFoodMatch;
+
+        } else if ($req->no_of_time_submit_btn_click < 21) {
+
+            $data = DB::table('lunch_ordering_extreme')
+                ->where('favorite_food', '=', $req->favourite_food)
+                ->where('family_member', '=', $req->family_member_name)
+                ->where('quantity', '=', $req->quantity)
+                ->where('price_per_item', '=', $req->price_per_item)->get();
+            if (count($data) > 0) {
+                $totalFoodMatch++;
+            }
+            echo $totalFoodMatch;
+
+        } else if ($req->no_of_time_submit_btn_click < 26) {
+            # code...
+            $data = DB::table('lunch_ordering_extreme')
+                ->where('favorite_food', '=', $req->favourite_food)
+                ->where('family_member', '=', $req->family_member_name)
+                ->where('quantity', '=', $req->quantity)
+                ->where('price_per_item', '=', $req->price_per_item)
+                ->where('price', '=', $req->total_price)->get();
+            if (count($data) > 0) {
+                $totalFoodMatch++;
+            }
+            echo $totalFoodMatch;
+        }
+
+    }
 }

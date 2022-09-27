@@ -347,7 +347,7 @@
     <script>
         function randomPositions() {
 
-          
+
         }
         var noOfTimesSubmitButtonClick = 0;
         var noOfCorrectAnswers = [];

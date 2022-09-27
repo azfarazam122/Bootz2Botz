@@ -96,8 +96,8 @@
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Grocery Store? 
- - <span style="color: #f79c51"> I don’t think so!
+                                <h1 style="font-size: 3.7rem;">Grocery Store?
+                                    - <span style="color: #f79c51"> I don’t think so!
                                     </span></h1>
 
                             </div>
@@ -121,14 +121,16 @@
                                 <h2>Shopping List
                                 </h2>
                                 <p>
-                                Everyone’s got different food they want from the store. They have entered their choices into a spreadsheet. Download their list and be sure their food gets added to the order……or they could get angry and leave you out of the next round. 
+                                    Everyone’s got different food they want from the store. They have entered their choices
+                                    into a spreadsheet. Download their list and be sure their food gets added to the
+                                    order……or they could get angry and leave you out of the next round.
 
 
 
 
                                     <br> <br>
                                     <a style="text-decoration: none" href="{{ asset('images/Lunch Order List.xlsx') }}"
-                                     download='Favourite Food.csv'   class="purpleButton">Download
+                                        download='Lunch Order List.xlsx' class="purpleButton">Download
                                         Favourite
                                         Food Spreadsheet</a>
 
@@ -179,12 +181,13 @@
                                         <div class="col-lg-12">
                                             <h2> Send My Order </h2>
                                             <p>
-                                            After you make sure that everyone’s favorites are entered, make sure the bot clicks on the submit button and you will find out how you did! 
+                                                After you make sure that everyone’s favorites are entered, make sure the bot
+                                                clicks on the submit button and you will find out how you did!
 
 
 
                                                 <br>
-<br>
+                                                <br>
                                                 Please acknowledge that you agree to the terms above:
 
                                             </p>
