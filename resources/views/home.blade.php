@@ -327,7 +327,7 @@
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" target="blank" href="/Challenge_7"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_7"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">
@@ -365,7 +365,46 @@
                                                     <br>
                                                     <hr>
                                                 </p>
-                                                <a style="text-decoration: none" target="blank" href="/Challenge_8"
+                                                <a style="text-decoration: none" target="blank" href="Challenge_8"
+                                                    class="purpleButton">View More</a>
+                                            </div>
+                                            <div class="col-2">
+                                                <img width="100%" src="images/dif.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            {{--challenge 9 cash me outside challenge last --}}
+                            <div class="challenge">
+                                <div class="header-chal">
+                                    <h1>
+
+                                    Cash me outside
+
+                                    </h1>
+                                </div>
+
+                                <div class="body-chal">
+                                    <div class="row">
+                                        <div class="col-lg-3 p-3 pt-4 ps-5">
+                                            <img src="images/cashme.jpg" width="100%" alt="" srcset="">
+                                        </div>
+                                        <div class="row col-lg-9 p-3">
+                                            <div class="col-10">
+                                                <p>
+                                                   Copy token from below site and enter it into Kado Bank, and Enter the confirmation code in CashStation Website before due time and win!
+
+                                                    <br>
+                                                    <hr>
+                                                </p>
+                                                <a style="text-decoration: none" target="blank" href="Challenge_9"
                                                     class="purpleButton">View More</a>
                                             </div>
                                             <div class="col-2">

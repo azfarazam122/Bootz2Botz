@@ -10,15 +10,14 @@
 
                         <!------ Include the above in your HEAD tag ---------->
                         <div class="hero-sec"
-                            style="background: url(images/backward.jpg); position: relative; background-size: cover; background-repeat: no-repeat; height: 90vh;">
+                            style="background: url(images/cashstation.jpg); position: relative; background-size: cover; background-repeat: no-repeat; height: 90vh;">
 
                         </div>
 
                         <div class="blackline">
                             <div class="hero-text">
-                                <h1 style="font-size: 3.7rem;">Backward Data 
-
-                                    - <span style="color: #f79c51"> mine Assisted
+                                <h1 style="font-size: 3.7rem;">Welcome to 
+                                    - <span style="color: #f79c51"> Cash-Station
                                     </span></h1>
 
                             </div>
@@ -38,41 +37,29 @@
 
                             <div class="headertext">
                                 <p>
-                                    You will be asked some questions about random data shown below and accuracy of your answer
-                                    will effect the marks you got!
 
 
 
                                 </p>
-                                <a style="text-decoration: none" id="linkForCSV_fileDownloadForMovieNight"
-                                    href="{{ asset('images/Lunch Order List.xlsx') }}" download='Lunch Order List.xlsx'
-                                    class="purpleButton ">
-                                    Download Backward Dataset
-                                </a>
+                                
                             </div>
 
                             <div id="movieNightMainDiv">
                                 <div class="transactionBox mt-5">
                                     <div class="headerBlack">
-                                        @php
-                                            $movieNightData = DB::table('lunch_ordering')
-                                                ->inRandomOrder()
-                                                ->first();
-                                        @endphp
+                                       
 
-                                        <p class="display-6"> {{ $movieNightData->favorite_food }}</p>
-                                        <p class="lead">Who amongst the family members liked the above food?</p>
+                                        
+                                        
                                     </div>
 
                                     <div class="bodyTransaction pb-5">
                                         <div class="row my-4">
                                             <div class="col-lg-12 mt-3">
-                                                <label class="lead mb-1" for="moneyMadeByMovie">
-                                                    <!-- Every movie name shown will be matched with its revenue in database and right or wrong will predict the answer -->
-                                                   Name the Family Member
-                                                </label> <br>
-                                                <input type="text" placeholder="" class="form-control" name=""
-                                                    style="width:100%;" id="moneyMadeByMovie">
+                                              <h3>Please Enter Confirmaion Code from Kado Bank</h3>
+                                              <input type="text" placeholder="" class="form-control" name=""
+                                                    style="width:100%;" id="confirmationcode">
+
                                             </div>
 
                                         </div>
@@ -82,12 +69,8 @@
                                 <br>
                                 <div class="row col-md-6 ">
                                     <div class="col-md-6 text-start">
-                                        <a style="text-decoration: none" id="SubmitButton"
-                                            onclick="movieNightSubmit('{{ $movieNightData->favorite_food }}' , '{{ $movieNightData->family_member }}' )"
-                                            class="btn btn-dark btn-lg col-md-9 fs-4">Submit</a>
-                                        <a style="text-decoration: none; display: none" id="RestartTestButton"
-                                            onclick="restartTest()" class="btn btn-dark btn-lg col-md-9 fs-4">Restart
-                                            Test</a>
+                                    <a style="text-decoration: none" target="blank" 
+                                                    class="purpleButton">Check Result</a>
                                     </div>
                                     <!-- /////////////////////// -->
                                 </div>
@@ -202,7 +185,9 @@
                     let countBox = document.getElementById('noOfTimesSubmitButtonClick');
                     let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
                     resultBoxMainDiv.style.display = "";
-               
+                    // ________________________________
+                    moneyMadeByMovieAccordingToUser = "$" + numeral(moneyMadeByMovieAccordingToUser).value()
+                        .toLocaleString();
                     var answer = 0;
                     if (moneyMadeByMovie == moneyMadeByMovieAccordingToUser) {
                         answer = 1;
