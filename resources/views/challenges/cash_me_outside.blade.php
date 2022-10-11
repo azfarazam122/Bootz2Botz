@@ -37,28 +37,39 @@
 
                             <div class="headertext">
                                 <p>
-                                Copy token for Site below and enter it into Kado Bank, and Enter the confirmation code in CashStation Website before due time and win!
+                                    Copy token for Site below and enter it into Kado Bank, and Enter the confirmation code
+                                    in CashStation Website before due time and win!
 
 
 
                                 </p>
-                                
+
                             </div>
 
-                            <div id="movieNightMainDiv">
+                            {{-- Page 1 --}}
+                            <div id="cashMeOutsideMainDiv">
                                 <div class="transactionBox mt-5">
-                                    <div class="headerBlack">
-                                       
+                                    <div class="text-end m-1">
+                                        <button class="btn btn-dark" onclick="restartTest()">Restart Test</button>
+                                    </div>
 
-                                        
-                                        <p class="lead">Please fill following field about the {movie}.</p>
+                                    <div class="headerBlack">
+
+
+                                        <p class="lead">Please Copy The Token Generated.</p>
                                     </div>
 
                                     <div class="bodyTransaction pb-5">
                                         <div class="row my-4">
                                             <div class="col-lg-12 mt-3">
-                                              <h3>Your Token Is Below</h3>
-                                              <p>jdwoeod2dj29xkansjahos</p>
+                                                <h3>Your Token Is Below</h3>
+                                                <small>you only have 5 Seconds to pick up the Value And Paste it in Kado
+                                                    Bank System Otherwise Our System will Generate new value After Each 5
+                                                    Seconds</small>
+                                                <div id="mainDivOfToken" class="row">
+                                                    <input type="text" id="uniqueTokenValue" class="form-control lead"
+                                                        readonly>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -68,21 +79,93 @@
                                 <br>
                                 <div class="row col-md-6 ">
                                     <div class="col-md-6 text-start">
-                                    <a style="text-decoration: none" target="blank" href="kado_bank"
-                                                    class="purpleButton">Kado Bank</a>
+                                        <a style="text-decoration: none" style="cursor: pointer;"
+                                            onclick="goToKadoBankSystem()" class="purpleButton">Go To Kado Bank</a>
                                     </div>
                                     <!-- /////////////////////// -->
                                 </div>
                             </div>
 
-                            <div class="col-md-6 text-end lead fs-2">
-                                <div style="display: none" id="resultBoxMainDiv">
-                                    <div> Result : <span class="lead fs-2" id="noOfTimesSubmitButtonClickAndAnswer"></span>
+                            {{-- Page 2 --}}
+                            <div style="display: none;" id="kadoBankMainDiv">
+                                <div class="transactionBox mt-5">
+
+                                    <div class="text-end m-1">
+                                        <button class="btn btn-dark" onclick="restartTest()">Restart Test</button>
                                     </div>
-                                    <div> Count : <span class="lead fs-2" id="noOfTimesSubmitButtonClick"></span>
+                                    <div class="headerBlack">
+                                        <p class="lead">Please fill following field</p>
+                                    </div>
+                                    <div class="bodyTransaction pb-5">
+                                        <div class="row my-4">
+                                            <div class="col-lg-12 mt-3">
+                                                <h3>Enter Your Generated Token</h3>
+                                                <input type="text" id="enterGeneratedToken"
+                                                    placeholder="Enter Your Generated Token" class="form-control"
+                                                    name="" style="width:100%;" id="kadobankinput">
+
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
+
+                                <br>
+                                <div class="row col-md-12 ">
+                                    <div class="col-md-6 text-start">
+                                        <button style="cursor: pointer;" onclick="goToCashStationSystem()"
+                                            class="purpleButton">Go to CashStation
+                                            Website</button>
+                                    </div>
+                                    <div class="col-md-6 text-end">
+                                        <button class="btn btn-dark" style="width: 140px;"
+                                            onclick="goToCashMeOutsidePage()">Previous</button>
+                                    </div>
+                                    <!-- /////////////////////// -->
+                                </div>
                             </div>
+
+                            {{-- Page 3 --}}
+                            <div style="display: none;" id="cashStationMainDiv">
+                                <div class="transactionBox mt-5">
+
+                                    <div class="text-end m-1">
+                                        <button class="btn btn-dark" onclick="restartTest()">Restart Test</button>
+                                    </div>
+                                    <div class="headerBlack">
+                                        <p class="lead">Please fill following field</p>
+                                    </div>
+
+                                    <div class="bodyTransaction pb-5">
+                                        <div class="row my-4">
+                                            <div class="col-lg-12 mt-3">
+                                                <div class="text-end">
+                                                    <button class="btn btn-secondary" onclick="seeYourConfimationCode()">See
+                                                        Your Confirmation
+                                                        Code</button>
+                                                </div>
+                                                <h3>Please Enter Confirmaion Code from Kado Bank</h3>
+                                                <input type="text" id="confirmationCodeValue"
+                                                    placeholder="Enter Confirmation Code" class="form-control"
+                                                    name="" style="width:100%;" id="confirmationcode">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="row col-md-6 ">
+                                    <div class="col-md-6 text-start">
+                                        <button style="text-decoration: none" style="cursor: pointer;"
+                                            onclick="checkConfirmationCode()" class="purpleButton">Check
+                                            Result</button>
+                                    </div>
+                                    <!-- /////////////////////// -->
+                                </div>
+                            </div>
+
 
 
 
@@ -171,95 +254,113 @@
         </div>
     </div>
     <script>
+        var uniq;
+        generateTokenAfterEach5Seconds()
+        uniq = 'ut232SdrDfsGFGSDDWEsqWd1122ee' + (new Date()).getTime();
+        document.getElementById('uniqueTokenValue').value = uniq;
+
+
+        function generateTokenAfterEach5Seconds() {
+            setTimeout(() => {
+                uniq = 'ut232SdrDfsGFGSDDWEsqWd1122ee' + (new Date()).getTime();
+                document.getElementById('uniqueTokenValue').value = uniq;
+                document.getElementById('uniqueTokenValue').style.fontWeight = "bold";
+                setTimeout(() => {
+                    document.getElementById('uniqueTokenValue').style.fontWeight = "normal";
+                }, "200")
+
+                generateTokenAfterEach5Seconds()
+            }, "5000")
+        }
+
+
+        function goToKadoBankSystem() {
+            $('#cashMeOutsideMainDiv').hide();
+            $('#kadoBankMainDiv').show();
+        }
+
+        function goToCashMeOutsidePage() {
+            $('#cashMeOutsideMainDiv').show();
+            $('#kadoBankMainDiv').hide();
+        }
+
+        var confirmationCode;
+
+        function goToCashStationSystem() {
+            if (document.getElementById('enterGeneratedToken').value == uniq) {
+                $('#kadoBankMainDiv').hide();
+                $('#cashStationMainDiv').show();
+                confirmationCode = 'cC23123AVSRAsTGsGhsDWEsQWd1W22eE' + (new Date()).getTime();
+
+                Swal.fire({
+                    title: '<strong>Transaction Successful !</strong>',
+                    icon: 'success',
+                    html: `<p class="lead"> Your Transaction Confirmation Number is : </p>` +
+                        `<input readonly type="text" class="form-control" value="` + confirmationCode + `">` +
+                        ``,
+                    showCloseButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                })
+            } else {
+                Swal.fire(
+                    'Unsuccessful !',
+                    "Try Again. Token Don't match.",
+                    'error'
+                )
+            }
+        }
+
+        function seeYourConfimationCode() {
+            Swal.fire({
+                title: '<strong>Transaction Confirmation Number!</strong>',
+                icon: 'success',
+                html: `<p class="lead"> Your Transaction Confirmation Number is : </p>` +
+                    `<input readonly type="text" class="form-control" value="` + confirmationCode + `">` +
+                    ``,
+                showCloseButton: true,
+                focusConfirm: false,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+            })
+        }
+
+        function checkConfirmationCode() {
+            stop()
+            var a = document.getElementById('stopwatch').innerHTML
+            var b = a.split(':');
+            let minute = numeral(b[0]).value();
+            let seconds = numeral(b[1]).value();
+            if (minute == 0 && seconds < 31) {
+                if (document.getElementById('confirmationCodeValue').value == confirmationCode) {
+                    Swal.fire(
+                        'Result : ' + '100' + '% Accuracy , <br>  Total Time : ' +
+                        a,
+                        "Excellent. It looks like All fields were filled correctly.",
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Unsuccessful !',
+                        "Try Again. Confirmation Code Doesn't match. Restart the Test",
+                        'error'
+                    )
+                }
+            } else {
+                Swal.fire(
+                    'Unsuccessful !',
+                    "Try Again. You have Exceed's the Time Limit. Restart the Test",
+                    'error'
+                )
+
+            }
+        }
         var noOfTimesSubmitButtonClick = 0;
         var noOfCorrectAnswers = [];
         start();
 
-        function movieNightSubmit(movieName, moneyMadeByMovie) {
-            var moneyMadeByMovieAccordingToUser = document.getElementById('moneyMadeByMovie').value;
-            if (moneyMadeByMovieAccordingToUser != "") {
 
-                if (noOfTimesSubmitButtonClick < 10) {
-                    let resultBox = document.getElementById('noOfTimesSubmitButtonClickAndAnswer');
-                    let countBox = document.getElementById('noOfTimesSubmitButtonClick');
-                    let resultBoxMainDiv = document.getElementById('resultBoxMainDiv');
-                    resultBoxMainDiv.style.display = "";
-                    // ________________________________
-                    moneyMadeByMovieAccordingToUser = "$" + numeral(moneyMadeByMovieAccordingToUser).value()
-                        .toLocaleString();
-                    var answer = 0;
-                    if (moneyMadeByMovie == moneyMadeByMovieAccordingToUser) {
-                        answer = 1;
-                    } else {
-                        answer = 0;
-                    }
-
-                    noOfCorrectAnswers.push(answer);
-                    let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                    resultBox.innerHTML = totalCorrectAnswers + "/" + (
-                        (noOfTimesSubmitButtonClick + 1) * 1);
-                    noOfTimesSubmitButtonClick++;
-                    countBox.innerHTML = noOfTimesSubmitButtonClick;
-
-
-                    $("#movieNightMainDiv").load(window.location.href + " #movieNightMainDiv");
-
-
-                    if (noOfTimesSubmitButtonClick == 10) {
-                        setTimeout(() => {
-                            document.getElementById('moneyMadeByMovie').style.display = 'none';
-                            document.getElementById('moneyMadeByMovie').value = '1234';
-                            document.getElementById('SubmitButton').innerHTML = "Check Result"
-                        }, "300")
-                    }
-
-                    // ________________________________
-
-                } else if (noOfTimesSubmitButtonClick == 10) {
-                    stop();
-                    let totalTime = document.getElementById('stopwatch').innerHTML;
-                    let totalCorrectAnswers = noOfCorrectAnswers.reduce((partialSum, a) => partialSum + a, 0);
-                    let resultInPercentage = totalCorrectAnswers / 10;
-                    resultInPercentage = resultInPercentage * 100;
-                    resultInPercentage = resultInPercentage.toFixed(0);
-                    if (resultInPercentage <= 50) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Try Again. It looks like some fields were filled incorrectly.",
-                            'success'
-                        )
-                    } else if (resultInPercentage > 50 && resultInPercentage < 76) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Well Done. It looks like more than half of the fields were filled correctly.",
-                            'success'
-                        )
-
-                    } else if (resultInPercentage > 75) {
-                        Swal.fire(
-                            'Result : ' + resultInPercentage + '% Accuracy , <br>  Total Time : ' +
-                            totalTime,
-                            "Excellent. It looks like All fields were filled correctly.",
-                            'success'
-                        )
-
-                    }
-
-                    document.getElementById('SubmitButton').style.display = "none"
-                    document.getElementById('RestartTestButton').style.display = ""
-                }
-            } else {
-                Swal.fire(
-                    'Error!',
-                    "Please Enter the Money Made By Movie.",
-                    'error'
-                )
-            }
-
-
-        }
 
         function restartTest() {
             window.location.href = window.location.href;

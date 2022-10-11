@@ -34,12 +34,6 @@ Route::group(['middleware' => ['checkLogin']], function () {
     Route::view('/Challenge_7', 'challenges.movie_night');
     Route::view('/Challenge_8', 'challenges.backward_data_mine_assisted');
     Route::view('/Challenge_9', 'challenges.cash_me_outside');
-    Route::view('/kado_bank', 'challenges.kado_bank');
-    Route::view('/cash_station', 'challenges.cash_station');
-
-
-    
-
 
     Route::view('/Bank', 'bank_system');
 
